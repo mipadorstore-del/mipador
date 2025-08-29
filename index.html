@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mipador - ​Made to move free 🪽</title>
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Swiper JS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- custom style CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+  <!-- Fullscreen Menu Overlay -->
+  <div id="fullscreenMenu" class="fullscreen-menu-overlay">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-7">
+          <button id="closeMenuBtn" class="close-menu-btn position-absolute top-0 end-0 m-4">
+            <i class="fas fa-times fs-1"></i>
+          </button>
+
+          <nav class="fullscreen-menu-nav">
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="menu-link">Home</a></li>
+            </ul>
+          </nav>
+
+          <div class="menu-social-links mt-5">
+            <a href="https://wa.me/212612918900" target="_blank">
+              <i class="fab fa-whatsapp social-icon text-light-custom"></i>
+            </a>
+            <a href="https://www.instagram.com/mipador" target="_blank">
+              <i class="fab fa-instagram social-icon text-light-custom"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-5 text-white py-3">
+          <p>
+            Casablanca <br>
+            +212 612918900 <br>
+            morocco
+          </p>
+          <a href="index.html" class="btn btn-outline-warning rounded-pill">Made to Move Free 🪽</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Header/Hero Section -->
+  <header id="hero" class="position-relative">
+    <div class="bg-dark-custom p-2 p-lg-5 m-3 m-lg-4 rounded-4">
+
+      <nav class="d-flex justify-content-end">
+        <button class="menu-toggle-btn btn d-flex align-items-center gap-2" data-aos="fade-left"
+          data-aos-duration="1000">
+          <span class="text-light-custom fw-bold">MENU</span>
+          <i class="fas fa-bars text-light-custom"></i>
+        </button>
+      </nav>
+
+
+
+      <div class="w-100 text-center overflow-hidden">
+
+        <div data-aos="fade-up">
+          <img src="images/logo.png" alt="Mipador Logo" class="hero-logo pb-4 img-fluid" />
+        </div>
+
+        <!-- Small devices: show text -->
+        <!-- <div class="d-block d-lg-none syne-font hero-title text-yellow" data-aos="fade-up">
+          Mipador
+        </div> -->
+
+        <div class="syne-font hero-title hero-bg-text" data-aos="fade-up" data-aos-delay="200">Mipador</div>
+        <div class="syne-font hero-title hero-bg-text" data-aos="fade-up" data-aos-delay="400">Mipador</div>
+        <div class="syne-font hero-title hero-bg-text" data-aos="fade-up" data-aos-delay="600">Mipador</div>
+      </div>
+
+      <div class="banner-content">
+        <div class="container">
+          <div class="row g-lg-5">
+            <div class="col-md-6"></div>
+            <div class="col-md-6">
+              <div data-aos="text-reveal-up" data-aos-delay="1000"
+                class="text-animation m-0 bg-primary-subtle p-4 p-lg-5 rounded-3">
+                <div class="swiper servicesSwiper">
+                  <div class="swiper-wrapper">
+
+                    <!-- Slide 1: Short & Punchy -->
+                    <div class="swiper-slide">
+                      <div class="text-light-custom content-title fw-bold">Short & Punchy</div>
+                      <p class="text-light-custom mb-4">
+                        Mipador is a clothing brand inspired by the albatross — crafted for freedom, balance, and good
+                        vibes. Made to Move Free.
+                      </p>
+                    </div>
+
+                    <!-- Slide 2: Elegant & Timeless -->
+                    <div class="swiper-slide">
+                      <div class="text-light-custom content-title fw-bold">Elegant & Timeless</div>
+                      <p class="text-light-custom mb-4">
+                        Mipador creates minimalist, timeless apparel designed to inspire confidence and freedom, just
+                        like the albatross in flight.
+                      </p>
+                    </div>
+
+                    <!-- Slide 3: Lifestyle & Motivational -->
+                    <div class="swiper-slide">
+                      <div class="text-light-custom content-title fw-bold">Lifestyle </div>
+                      <p class="text-light-custom mb-4">
+                        At Mipador, we design clothing that blends comfort, style, and mindset — empowering you to move
+                        free and live with purpose.
+                      </p>
+                    </div>
+
+                  </div>
+                  <div class="swiper-pagination text-start"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </header>
+
+
+  <!-- About Section -->
+  <section id="about" class="py-5 my-5 position-relative">
+    <div class="container">
+      <div class="row g-lg-5">
+
+        <!-- Video -->
+        <div class="banner-image col-md-5" data-aos="clip-bottom" data-aos-duration="1000">
+          <video class="img-fluid rounded-4" autoplay muted loop playsinline>
+            <source src="images/about2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- Text Content -->
+        <div class="col-md-6" data-aos="clip-top" data-aos-delay="1000">
+          <div class="content-title mb-4 fw-bold">About Us</div>
+          <blockquote class="fst-italic fs-4 mb-4">
+            "Inspired by the albatross — designed for freedom, balance, and good vibes."
+          </blockquote>
+          <p class="mb-4">
+            Mipador is a clothing brand for those who work hard, embrace life, and value a positive mindset.
+            Every piece is thoughtfully designed to combine comfort, style, and freedom, helping you move confidently
+            through your day.
+          </p>
+          <p class="mb-5">
+            Minimalist and timeless apparel that fits both lifestyle and work.
+            Crafted to reflect strength, balance, and the elegance of the albatross in flight.
+            Perfect for those who value good vibes, freedom, and living with purpose.
+          </p>
+          <button class="btn btn-custom d-flex align-items-center gap-2">
+            <span>Discover The Store</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- Latest Works Section with Swiper -->
+<section id="selection" class="py-5 my-5 position-relative">
+  <div class="bg-light-alt position-absolute bottom-0 start-0 w-100" style="height: 50%; border-radius: 20px;"></div>
+
+  <div class="container position-relative">
+    <h2 class="content-title text-center mb-5" data-aos="fade-up">Our Selection</h2>
+
+    <!-- Swiper Works -->
+    <div class="swiper worksSwiper mb-5" data-aos="fade-up" data-aos-delay="200">
+      <div class="swiper-wrapper">
+
+        <!-- Product 1 -->
+        <div class="swiper-slide">
+          <a href="p1.html" class="card card-custom text-decoration-none">
+            <img src="images/p1.jpg" class="img-fluid" alt="Jacket 1" />
+            <div class="card-body text-center">
+              <div class="date-text mb-2">Jacket 1</div>
+              <h3 class="subtitle">Classic Jacket</h3>
+            </div>
+          </a>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="swiper-slide">
+          <a href="#" class="card card-custom text-decoration-none">
+            <img src="images/p2.jpg" class="img-fluid" alt="Jacket 2" />
+            <div class="card-body text-center">
+              <div class="date-text mb-2">Ø</div>
+              <h3 class="subtitle"></h3>
+            </div>
+          </a>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="swiper-slide">
+          <a href="#" class="card card-custom text-decoration-none">
+            <img src="images/p3.jpg" class="img-fluid" alt="Jacket 3" />
+            <div class="card-body text-center">
+              <div class="date-text mb-2">Ø</div>
+              <h3 class="subtitle"></h3>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Brand Philosophy Section -->
+  <section id="lifestyle" class="py-5 my-5 position-relative overflow-hidden">
+    <div class="container position-relative h-100">
+
+      <!-- Section Title -->
+      <div class="position-absolute top-0 start-100 translate-middle-x">
+        <div class="syne-font section-title" data-aos="fade-up">Lifestyle</div>
+        <div class="syne-font section-title section-title-bg" data-aos="fade-up" data-aos-delay="200">Lifestyle
+        </div>
+        <div class="syne-font section-title section-title-bg" data-aos="fade-up" data-aos-delay="400">Lifestyle
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 py-5">
+
+            <div class="bg-light-alt p-5 mt-5 rounded-4 overflow-hidden" data-aos="clip-top" data-aos-delay="1000">
+              <div class="content-title mb-4 fw-bold">Lifestyle</div>
+
+              <div class="mb-5">
+                <h3 class="subtitle mb-2">Freedom & Balance</h3>
+                <p>
+                  Inspired by the albatross, Mipador designs clothing that lets you move freely and live in balance.
+                  Every piece blends comfort, style, and a positive mindset.
+                </p>
+              </div>
+
+              <div class="mb-5">
+                <h3 class="subtitle mb-2">Good Vibes Everyday</h3>
+                <p>
+                  Our apparel is created for men who work hard, value peace, and enjoy life. Mipador is about feeling
+                  confident, relaxed, and energized every day.
+                </p>
+              </div>
+
+              <div>
+                <h3 class="subtitle mb-2">Timeless & Minimal</h3>
+                <p>
+                  Clean lines, minimalist designs, and premium materials make Mipador versatile for any lifestyle.
+                  Fashion that lasts and inspires.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+            <img src="images/lifestyle2.jpg" class="img-fluid rounded-4" alt="Mipador Lifestyle"
+              data-aos="fade-left" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CTA Section -->
+  <section id="cta" class="py-5 my-5 bg-light-alt rounded-5 m-4" data-aos="clip-bottom">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Text -->
+        <div class="col-md-6" data-aos="fade-right">
+          <h2 class="content-title mb-4 fw-bold">Stay in the Loop</h2>
+          <p class="mb-4">
+            Join the Mipador community and be the first to discover our latest collections, lifestyle tips, and special
+            releases.
+            Feel free, live inspired, and move with good vibes every day.
+          </p>
+        </div>
+
+        <!-- Form -->
+        <div class="col-md-6" data-aos="fade-left">
+          <form class="d-flex flex-column gap-4">
+            <input type="text" class="form-control-custom form-control" placeholder="Your name..." />
+            <input type="email" class="form-control-custom form-control" placeholder="Your email..." />
+            <textarea class="form-control-custom form-control" placeholder="Your message..." rows="4"></textarea>
+            <button class="btn btn-custom d-flex align-items-center justify-content-center gap-2">
+              <span>Join Now</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer Section -->
+  <footer id="footer" class="py-5 bg-dark-custom rounded-4 m-3 m-lg-4" data-aos="clip-bottom">
+    <div class="container">
+      <div class="row mb-5">
+
+        <div class="col-md-3">
+          <!-- Logo instead of text -->
+          <div data-aos="fade-right" data-aos-duration="1000">
+            <img src="images/logofooter.png" alt="Mipador Logo" class="footer-logo img-fluid" />
+          </div>
+        </div>
+
+        <div class="col-md-5 mt-4 mt-md-0">
+          <p class="text-light-custom mb-4">
+            Just feel free to contact us.
+          </p>
+          <p class="text-light-custom fst-italic fs-5">
+            <a href="mailto:mipador.store@gmail.com" class="text-light-custom text-decoration-none">
+              mipador.store@gmail.com
+            </a>
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="https://wa.me/212612918900" target="_blank">
+              <i class="fab fa-whatsapp social-icon text-light-custom"></i>
+            </a>
+            <a href="https://www.instagram.com/mipador" target="_blank">
+              <i class="fab fa-instagram social-icon text-light-custom"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="border-top border-light pt-4">
+        <p class="text-light-custom text-center">
+          ©2025 Mipador
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JQuery js -->
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <!-- Plugins js -->
+  <script src="js/plugins.js"></script>
+  <!-- Script js -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mipador - ​Made to move free 🪽</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper JS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- custom style CSS -->
+    <link rel="stylesheet" href="productdetails2.css">
+</head>
+
+<body>
+    <!-- Added language switcher -->
+    <div class="language-switcher position-relative p-3 p-lg-4 m-3 m-lg-4 rounded-4">
+        <button class="lang-btn active" onclick="switchLanguage('en')" data-lang="en">EN</button>
+        <button class="lang-btn" onclick="switchLanguage('fr')" data-lang="fr">FR</button>
+        <button class="lang-btn" onclick="switchLanguage('ar')" data-lang="ar">AR</button>
+    </div>
+
+
+    <!-- Main product section with proper Bootstrap grid -->
+    <main class="container-fluid px-3 px-lg-5">
+        <div class="row g-4">
+            <!-- Product Images Gallery -->
+            <div class="col-lg-6">
+                <div class="product-gallery" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="images/p1.jpg?height=500&width=600" alt="Winter Jacket - Main View"
+                        class="main-product-img" id="mainProductImg" data-bs-toggle="modal"
+                        data-bs-target="#imageZoomModal">
+
+                    <div class="thumbnail-container">
+                        <img src="images/p2.jpg?height=80&width=80" alt="Front View" class="thumbnail active"
+                            onclick="changeMainImage(this, 'Front View')">
+                        <img src="images/p1.jpg?height=80&width=80" alt="Side View" class="thumbnail"
+                            onclick="changeMainImage(this, 'Side View')">
+                        <img src="images/p1.jpg?height=80&width=80" alt="Back View" class="thumbnail"
+                            onclick="changeMainImage(this, 'Back View')">
+                        <img src="images/p1.jpg?height=80&width=80" alt="Detail View" class="thumbnail"
+                            onclick="changeMainImage(this, 'Detail View')">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="col-lg-6">
+                <div class="product-details" data-aos="fade-left" data-aos-duration="1000">
+                    <!-- <span class="category-badge" data-translate="category">Clothing</span> -->
+                    <h1 class="product-title" data-translate="product_title">Premium Winter Jacket</h1>
+                    <div class="price" data-translate="price">300 MAD</div>
+
+                    <!-- Added urgency elements -->
+                    <div class="urgency-banner">
+                        <i class="fas fa-fire me-2"></i>
+                        <span data-translate="urgency">Hurry! Only 11 pieces left in stock!</span>
+                    </div>
+
+                    <div class="viewers-count">
+                        <i class="fas fa-eye me-2"></i>
+                        <span data-translate="viewers">6 people are viewing this right now</span>
+                    </div>
+
+                    <p class="lead mb-4" data-translate="description">
+                        Stay warm and stylish this winter with our premium insulated jacket.
+                        Designed for comfort and durability, perfect for both casual and outdoor activities.
+                    </p>
+
+                    <!-- Size Selector -->
+                    <div class="mb-4">
+                        <h5 class="mb-3" data-translate="size_label">Size</h5>
+                        <div class="size-selector">
+                            <div class="size-option" onclick="selectSize(this)">M</div>
+                            <div class="size-option active" onclick="selectSize(this)">L</div>
+                            <div class="size-option" onclick="selectSize(this)">XL</div>
+                            <div class="size-option" onclick="selectSize(this)">XXL</div>
+                            <div class="size-option" onclick="selectSize(this)">3XL</div>
+                            <div class="size-option" onclick="selectSize(this)">4XL</div>
+                            <div class="size-option" onclick="selectSize(this)">5XL</div>
+                            <div class="size-option" onclick="selectSize(this)">6XL</div>
+                        </div>
+                    </div>
+
+                    <!-- Added color selector -->
+                    <div class="mb-4">
+                        <h5 class="mb-3" data-translate="color_label">Please choose color</h5>
+                        <div class="color-selector">
+                            <div class="color-option color-black active" onclick="selectColor(this)" data-color="black"
+                                title="Black"></div>
+                            <div class="color-option color-green" onclick="selectColor(this)" data-color="green"
+                                title="Green"></div>
+                            <div class="color-option color-gray" onclick="selectColor(this)" data-color="gray"
+                                title="Gray"></div>
+                            <div class="color-option color-beige" onclick="selectColor(this)" data-color="beige"
+                                title="Beige"></div>
+                        </div>
+                    </div>
+
+                    <!-- Added bundle offers section -->
+                    <div class="bundle-offers">
+                        <h5 class="mb-3" data-translate="bundle_title">👇🏻 Please choose the appropriate offer 👇🏻
+                        </h5>
+                        <div class="bundle-option active" onclick="selectBundle(this)" data-price="300"
+                            data-quantity="1">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span data-translate="bundle_1">Buy 1 for 300 MAD + Free Shipping</span>
+                                <span class="bundle-price">300 MAD</span>
+                            </div>
+                        </div>
+                        <div class="bundle-option" onclick="selectBundle(this)" data-price="550" data-quantity="2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span data-translate="bundle_2">Buy 2 for 550 MAD + Free Shipping 🎁</span>
+                                <div>
+                                    <span class="bundle-price">550 MAD</span>
+                                    <span class="bundle-savings ms-2">- 50</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bundle-option" onclick="selectBundle(this)" data-price="800" data-quantity="3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span data-translate="bundle_3">Buy 3 for 800 MAD + Free Shipping 🎁</span>
+                                <div>
+                                    <span class="bundle-price">800 MAD</span>
+                                    <span class="bundle-savings ms-2">- 100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Added order form -->
+                    <div class="order-form">
+                        <h5 class="mb-3" data-translate="order_title">To order, please enter your information below</h5>
+                        <form id="orderForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label" data-translate="full_name">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" data-translate="phone">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" data-translate="city">City</label>
+                                    <input type="text" class="form-control" id="city" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" data-translate="address">Address</label>
+                                    <input type="text" class="form-control" id="address" required>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="buy-btn w-100 mt-4" id="orderBtn">
+                                <i class="fas fa-shopping-cart me-2"></i>
+                                <span data-translate="order_button">Click here to order - 300 MAD</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Product Specifications -->
+                    <div class="mt-5">
+                        <h5 class="mb-3" data-translate="specs_title">Specifications</h5>
+                        <ul class="specs-list">
+                            <li>
+                                <span class="spec-label" data-translate="material">Material</span>
+                                <span class="spec-value">100% Polyester</span>
+                            </li>
+                            <li>
+                                <span class="spec-label" data-translate="features">Features</span>
+                                <span class="spec-value" data-translate="waterproof">Waterproof & Windproof</span>
+                            </li>
+                            <li>
+                                <span class="spec-label" data-translate="care">Care</span>
+                                <span class="spec-value" data-translate="machine_wash">Machine Washable</span>
+                            </li>
+                            <li>
+                                <span class="spec-label" data-translate="warranty">Warranty</span>
+                                <span class="spec-value">1 Year</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Image Zoom Modal -->
+    <div class="modal fade zoom-modal" id="imageZoomModal" tabindex="-1" aria-labelledby="imageZoomModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageZoomModalLabel">Product Image</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/p1.jpg?height=600&width=800" alt="Zoomed Product Image" id="zoomedImage"
+                        class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="py-5 bg-dark-custom rounded-4 m-3 m-lg-4 mt-5" data-aos="clip-bottom">
+        <div class="container">
+            <div class="d-flex justify-content-center" data-aos="fade-right" data-aos-duration="1000">
+                <img src="images/logofooter.png" alt="Mipador Logo" class="footer-logo img-fluid" />
+            </div>
+            <div class="border-top border-light pt-4 mt-4">
+                <p class="text-light-custom text-center mb-0">
+                    ©2025 Mipador - Made to move free 🪽
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        const translations = {
+            en: {
+                home: "Home page",
+                category: "Clothing",
+                product_title: "Premium Winter Jacket",
+                price: "300 MAD",
+                urgency: "Hurry! Only 11 pieces left in stock!",
+                viewers: "6 people are viewing this right now",
+                description: "Stay warm and stylish this winter with our premium insulated jacket. Designed for comfort and durability, perfect for both casual and outdoor activities.",
+                size_label: "Size",
+                color_label: "Please choose color",
+                bundle_title: "👇🏻 Please choose the appropriate offer 👇🏻",
+                bundle_1: "Buy 1 for 300 MAD + Free Shipping",
+                bundle_2: "Buy 2 for 550 MAD + Free Shipping 🎁",
+                bundle_3: "Buy 3 for 800 MAD + Free Shipping 🎁",
+                order_title: "To order, please enter your information below",
+                full_name: "Full Name",
+                phone: "Phone Number",
+                city: "City",
+                address: "Address",
+                order_button: "Click here to order - 300 MAD",
+                specs_title: "Specifications",
+                material: "Material",
+                features: "Features",
+                waterproof: "Waterproof & Windproof",
+                care: "Care",
+                machine_wash: "Machine Washable",
+                warranty: "Warranty"
+            },
+            fr: {
+                home: "Page d'accueil",
+                category: "Vêtements",
+                product_title: "Veste d'Hiver Premium",
+                price: "300 MAD",
+                urgency: "Dépêchez-vous! Il ne reste que 11 pièces en stock!",
+                viewers: "6 personnes regardent ceci en ce moment",
+                description: "Restez au chaud et élégant cet hiver avec notre veste isolée premium. Conçue pour le confort et la durabilité, parfaite pour les activités décontractées et de plein air.",
+                size_label: "Taille",
+                color_label: "Veuillez choisir la couleur",
+                bundle_title: "👇🏻 Veuillez choisir l'offre appropriée 👇🏻",
+                bundle_1: "Achetez 1 pour 300 MAD + Livraison gratuite",
+                bundle_2: "Achetez 2 pour 550 MAD + Livraison gratuite 🎁",
+                bundle_3: "Achetez 3 pour 800 MAD + Livraison gratuite 🎁",
+                order_title: "Pour commander, veuillez saisir vos informations ci-dessous",
+                full_name: "Nom complet",
+                phone: "Numéro de téléphone",
+                city: "Ville",
+                address: "Adresse",
+                order_button: "Cliquez ici pour commander - 300 MAD",
+                specs_title: "Spécifications",
+                material: "Matériau",
+                features: "Caractéristiques",
+                waterproof: "Imperméable et coupe-vent",
+                care: "Entretien",
+                machine_wash: "Lavable en machine",
+                warranty: "Garantie"
+            },
+            ar: {
+                home: "الصفحة الرئيسية",
+                category: "ملابس",
+                product_title: "جاكيت شتوي فاخر",
+                price: "300 درهم",
+                urgency: "سارع! فقط 11 قطعة متبقية في المخزن!",
+                viewers: "يشاهده 6 متصفح في الوقت الحالي",
+                description: "ابق دافئاً وأنيقاً هذا الشتاء مع جاكيتنا المعزول الفاخر. مصمم للراحة والمتانة، مثالي للأنشطة العادية والخارجية.",
+                size_label: "المقاس",
+                color_label: "المرجوا اختيار اللون",
+                bundle_title: "👇🏻 المرجوا إختيار العرض المناسب 👇🏻",
+                bundle_1: "اشتري 1 ب 300 درهم+ التوصيل بالمجان",
+                bundle_2: "اشتري 2 ب 550 درهم+ التوصيل بالمجان 🎁",
+                bundle_3: "اشتري 3 ب 800 درهم+ التوصيل بالمجان 🎁",
+                order_title: "للطلب المرجو إدخال معلوماتك في الخانات أسفله",
+                full_name: "الاسم الكامل",
+                phone: "رقم الهاتف",
+                city: "المدينة",
+                address: "العنوان",
+                order_button: "اضغط هنا للطلب - 300 درهم",
+                specs_title: "المواصفات",
+                material: "المادة",
+                features: "الخصائص",
+                waterproof: "مقاوم للماء والرياح",
+                care: "العناية",
+                machine_wash: "قابل للغسل في الغسالة",
+                warranty: "الضمان"
+            }
+        };
+
+        let currentLang = 'en';
+        let selectedBundle = { price: 300, quantity: 1 };
+
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+            // Update active language button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.dataset.translate;
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            updateOrderButton();
+        }
+
+        function selectBundle(bundleElement) {
+            document.querySelectorAll('.bundle-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            bundleElement.classList.add('active');
+
+            selectedBundle.price = parseInt(bundleElement.dataset.price);
+            selectedBundle.quantity = parseInt(bundleElement.dataset.quantity);
+
+            updateOrderButton();
+        }
+
+        function updateOrderButton() {
+            const orderBtn = document.getElementById('orderBtn');
+            const buttonText = translations[currentLang].order_button.replace('300', selectedBundle.price);
+            orderBtn.querySelector('span').textContent = buttonText;
+        }
+
+        function selectColor(colorElement) {
+            document.querySelectorAll('.color-option').forEach(color => {
+                color.classList.remove('active');
+            });
+            colorElement.classList.add('active');
+        }
+
+        function changeMainImage(thumbnail, altText) {
+            const mainImg = document.getElementById('mainProductImg');
+            const zoomedImg = document.getElementById('zoomedImage');
+
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+
+            thumbnail.classList.add('active');
+
+            mainImg.src = thumbnail.src.replace('height=80&width=80', 'height=500&width=600');
+            mainImg.alt = `Winter Jacket - ${altText}`;
+            zoomedImg.src = thumbnail.src.replace('height=80&width=80', 'height=600&width=800');
+            zoomedImg.alt = `Zoomed ${altText}`;
+        }
+
+        function selectSize(sizeElement) {
+            document.querySelectorAll('.size-option').forEach(size => {
+                size.classList.remove('active');
+            });
+            sizeElement.classList.add('active');
+        }
+
+        document.getElementById('orderForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                phone: document.getElementById('phone').value,
+                city: document.getElementById('city').value,
+                address: document.getElementById('address').value,
+                selectedSize: document.querySelector('.size-option.active').textContent,
+                selectedColor: document.querySelector('.color-option.active').dataset.color,
+                bundle: selectedBundle,
+                language: currentLang
+            };
+
+            // Simple animation feedback
+            const orderBtn = document.getElementById('orderBtn');
+            const originalText = orderBtn.innerHTML;
+
+            orderBtn.innerHTML = '<i class="fas fa-check me-2"></i>Order Submitted!';
+            orderBtn.style.backgroundColor = '#28a745';
+
+            setTimeout(() => {
+                orderBtn.innerHTML = originalText;
+                orderBtn.style.backgroundColor = '';
+            }, 3000);
+
+            console.log('Order submitted:', formData);
+            // Here you would typically send the data to your server
+        });
+
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        document.addEventListener('keydown', function (e) {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const activeThumbnail = document.querySelector('.thumbnail.active');
+            const currentIndex = Array.from(thumbnails).indexOf(activeThumbnail);
+
+            if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                thumbnails[currentIndex - 1].click();
+            } else if (e.key === 'ArrowRight' && currentIndex < thumbnails.length - 1) {
+                thumbnails[currentIndex + 1].click();
+            }
+        });
+
+        // Detect language from URL parameter (?lang=fr for example)
+        function getLangFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get("lang"); // returns 'en', 'fr', or 'ar'
+        }
+
+        // On page load
+        window.addEventListener("DOMContentLoaded", () => {
+            const urlLang = getLangFromUrl();
+
+            if (urlLang && translations[urlLang]) {
+                switchLanguage(urlLang);
+            } else {
+                switchLanguage("en"); // default fallback
+            }
+        });
+
+    </script>
+</body>
+
+</html>
