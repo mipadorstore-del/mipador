@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mipador - ​Made to move free 🪽</title>
+  <title>Mipador - Made to Move Free 🪽</title>
   <meta name="description" content="Mipador - Minimalist clothing brand inspired by the albatross. Made to move free with style, comfort and good vibes.">
   <meta name="keywords" content="mipador, jacket, clothing, fashion, minimalist, albatross, freedom, style">
 
@@ -12,471 +12,318 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <!-- AOS Animation CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <!-- Swiper JS CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- custom style CSS -->
+  <!-- Custom style CSS -->
   <link rel="stylesheet" href="style.css">
-  
 </head>
 
-<body class="overflow-x-hidden">
-
-  <!-- Fullscreen Menu Overlay -->
-  <div id="fullscreenMenu" class="fullscreen-menu-overlay albatross-pattern" role="dialog" aria-labelledby="menu-title" aria-hidden="true">
-    <div class="container-fluid h-100">
-      <div class="row h-100 align-items-center justify-content-center">
-        <div class="col-xl-6 col-lg-7 col-md-8">
-          <button id="closeMenuBtn" class="close-menu-btn position-absolute top-0 end-0 m-4 btn btn-link wing-spread" aria-label="Close menu">
-            <i class="fas fa-times fs-1"></i>
+<body>
+  <!-- Fixed Top Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top" role="navigation" style="background: linear-gradient(135deg, var(--primary) 0%, var(--freedom-gold) 100%);">
+    <div class="container">
+      <a class="navbar-brand" href="#hero">
+        <img src="images/logo.png" alt="Mipador Logo" class="img-fluid" style="max-height: 40px;" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-light"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-light font-heading" href="#hero" data-translate="nav-home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light font-heading" href="#about" data-translate="nav-about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light font-heading" href="#selection" data-translate="nav-selection">Selection</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light font-heading" href="#lifestyle" data-translate="nav-lifestyle">Lifestyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light font-heading" href="#cta" data-translate="nav-contact">Contact</a>
+          </li>
+        </ul>
+        <!-- Language Selector -->
+        <div class="dropdown ms-3">
+          <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-globe me-1"></i>
+            <span id="currentLang">EN</span>
           </button>
-
-          <nav class="fullscreen-menu-nav" role="navigation">
-            <h2 id="menu-title" class="visually-hidden">Main Navigation</h2>
-            <ul class="list-unstyled mb-5">
-              <li class="mb-3"><a href="#hero" class="menu-link wind-lines">Home</a></li>
-              <li class="mb-3"><a href="#about" class="menu-link wind-lines">About</a></li>
-              <li class="mb-3"><a href="#selection" class="menu-link wind-lines">Selection</a></li>
-              <li class="mb-3"><a href="#lifestyle" class="menu-link wind-lines">Lifestyle</a></li>
-              <li class="mb-3"><a href="#cta" class="menu-link wind-lines">Contact</a></li>
-            </ul>
-          </nav>
-
-          <div class="menu-social-links d-flex gap-4 mb-4">
-            <a href="https://wa.me/212612918900" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-link wing-spread">
-              <i class="fab fa-whatsapp fs-3"></i>
-            </a>
-            <a href="https://www.instagram.com/mipador" target="_blank" rel="noopener" aria-label="Instagram" class="social-link wing-spread">
-              <i class="fab fa-instagram fs-3"></i>
-            </a>
-          </div>
-        </div>
-        
-        <div class="col-xl-4 col-lg-5 col-md-4 text-white py-4 d-none d-md-block">
-          <div class="ps-4">
-            <address class="mb-4 lh-lg">
-              <strong class="soaring-text">Casablanca</strong><br>
-              <a href="tel:+212612918900" class="text-white text-decoration-none">+212 612918900</a><br>
-              Morocco
-            </address>
-            <a href="#hero" class="btn btn-outline-warning rounded-pill px-4 py-2 wing-spread">Made to Move Free 🪽</a>
-          </div>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="ar">العربية</a></li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
+  </nav>
 
   <!-- Header/Hero Section -->
-  <header id="hero" class="position-relative min-vh-100 d-flex align-items-center albatross-pattern">
+  <header id="hero" class="position-relative min-vh-100 d-flex align-items-center hero-section">
     <div class="bg-dark-custom py-5 my-5 rounded-4 w-100 flight-path">
-
-      <!-- Navigation -->
-      <nav class="d-flex justify-content-end">
-        <button class="menu-toggle-btn btn d-flex align-items-center gap-2 wing-spread" data-aos="fade-left"
-          data-aos-duration="1000">
-          <span class="text-light-custom fw-bold">MENU</span>
-          <i class="fas fa-bars text-light-custom"></i>
-        </button>
-      </nav>
-
       <!-- Hero Content -->
-      <div class="w-100 text-center overflow-hidden p-4">
-
+      <div class="container text-center text-light-custom py-5">
         <div data-aos="fade-up">
-          <img src="images/logo.png" alt="Mipador Logo" class="hero-logo pb-4 img-fluid wing-spread" />
+          <img src="images/logo.png" alt="Mipador Logo - Albatross inspired fashion brand" class="hero-logo pb-4 img-fluid wing-spread" />
         </div>
-
-        <div class="syne-font hero-title hero-bg-text soaring-text" data-aos="fade-up" data-aos-delay="200">Mipador</div>
-        <div class="syne-font hero-title hero-bg-text soaring-text" data-aos="fade-up" data-aos-delay="400">Mipador</div>
-        <div class="syne-font hero-title hero-bg-text soaring-text" data-aos="fade-up" data-aos-delay="600">Mipador</div>
-      </div>
-
-      <!-- Banner Content -->
-      <div class="banner-content">
-        <div class="container-fluid">
-          <div class="row g-4 g-lg-5 align-items-end">
-            <div class="col-lg-6 d-none d-lg-block"></div>
-            <div class="col-lg-6 col-md-8 col-sm-10 mx-auto mx-lg-0">
-              <div data-aos="text-reveal-up" data-aos-delay="1000"
-                class="text-animation m-0 bg-primary-subtle p-4 p-lg-5 rounded-4 shadow-lg albatross-pattern horizon-line">
-                <div class="swiper servicesSwiper">
-                  <div class="swiper-wrapper">
-
-                    <!-- Slide 1: Short & Punchy -->
-                    <div class="swiper-slide">
-                      <h2 class="text-light-custom content-title fw-bold mb-4 d-flex align-items-center gap-3">
-                        <i class="fas fa-feather feather-icon text-warning"></i>
-                        Short & Punchy
-                      </h2>
-                      <p class="text-light-custom mb-0 fs-5 lh-lg">
-                        Mipador is a clothing brand inspired by the albatross — crafted for freedom, balance, and good
-                        vibes. Made to Move Free.
-                      </p>
-                    </div>
-
-                    <!-- Slide 2: Elegant & Timeless -->
-                    <div class="swiper-slide">
-                      <h2 class="text-light-custom content-title fw-bold mb-4 d-flex align-items-center gap-3">
-                        Elegant & Timeless
-                      </h2>
-                      <p class="text-light-custom mb-0 fs-5 lh-lg">
-                        Mipador creates minimalist, timeless apparel designed to inspire confidence and freedom, just
-                        like the albatross in flight.
-                      </p>
-                    </div>
-
-                    <!-- Slide 3: Lifestyle & Motivational -->
-                    <div class="swiper-slide">
-                      <h2 class="text-light-custom content-title fw-bold mb-4 d-flex align-items-center gap-3">
-                        <i class="fas fa-wind feather-icon text-warning"></i>
-                        Lifestyle
-                      </h2>
-                      <p class="text-light-custom mb-0 fs-5 lh-lg">
-                        At Mipador, we design clothing that blends comfort, style, and mindset — empowering you to move
-                        free and live with purpose.
-                      </p>
-                    </div>
-
-                  </div>
-                  <div class="swiper-pagination text-start mt-4"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <h1 class="hero-title mb-4 font-heading" data-translate="hero-title">Made to Move Free</h1>
+        <p class="lead mb-5 font-body" data-translate="hero-description" style="max-width: 600px; margin: 0 auto;">
+          Discover the perfect balance between timeless elegance and bold street style. 
+          Inspired by the albatross, our collections embody freedom, movement, and authentic expression.
+        </p>
+        <div class="d-flex flex-column flex-md-row gap-3 justify-content-center" data-aos="fade-up" data-aos-delay="600">
+          <a href="#selection" class="btn btn-primary btn-lg px-5" data-translate="explore-classic">
+            <i class="fas fa-feather me-2"></i>Explore Classic
+          </a>
+          <a href="#lifestyle" class="btn btn-secondary btn-lg px-5" data-translate="discover-streetwear">
+            <i class="fas fa-bolt me-2"></i>Discover Streetwear
+          </a>
         </div>
       </div>
-
     </div>
   </header>
 
   <!-- About Section -->
-  <section id="about" class="py-5 my-5 position-relative sky-gradient  rounded-4">
+  <section id="about" class="py-5 my-5 position-relative section-classic rounded-4">
     <div class="container">
-      <div class="row g-4 g-lg-5 align-items-center rounded-4">
-
-        <!-- Video -->
+      <div class="row align-items-center g-5">
         <div class="banner-image col-lg-5 col-md-6 order-2 order-md-1" data-aos="clip-bottom" data-aos-duration="1000">
-          <div class="position-relative albatross-card">
+          <div class="position-relative classic-card p-3">
             <video class="img-fluid rounded-4 w-100 shadow-sm" autoplay muted loop playsinline>
               <source src="images/about2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <div class="position-absolute top-0 start-0 w-100 h-100 rounded-4" style="background: linear-gradient(45deg, rgba(58,73,80,0.1), transparent);"></div>
+            <div class="position-absolute top-0 start-0 w-100 h-100 rounded-4" style="background: linear-gradient(45deg, rgba(217,119,6,0.1), transparent);"></div>
           </div>
         </div>
-
-        <!-- Text Content -->
-        <div class="col-lg-7 col-md-6 order-1 order-md-2 p-4" data-aos="clip-top" data-aos-delay="1000">
-          <div class="ps-lg-4">
-            <h2 class="content-title mb-4 fw-bold text-balance d-flex align-items-center gap-3">
-              About Us
-            </h2>
-            <blockquote class="fst-italic fs-4 mb-4 text-muted-custom border-start border-3 border-warning ps-4 position-relative">
-              <i class="fas fa-quote-left position-absolute text-warning opacity-25" style="top: -10px; left: -15px; font-size: 2rem;"></i>
-              "Inspired by the albatross — designed for freedom, balance, and good vibes."
-            </blockquote>
-            <p class="mb-4 fs-5 lh-lg">
-              Mipador is a clothing brand for those who work hard, embrace life, and value a positive mindset.
-              Every piece is thoughtfully designed to combine comfort, style, and freedom, helping you move confidently
-              through your day.
+        <div class="col-lg-7 col-md-6 order-1 order-md-2">
+          <div class="ps-lg-5" data-aos="fade-left" data-aos-duration="1000">
+            <h2 class="section-title classic-title font-heading mb-4" data-translate="about-title">The Spirit of the Albatross</h2>
+            <p class="lead font-body mb-4" data-translate="about-description-1">
+              Like the majestic albatross that soars effortlessly across vast oceans, 
+              Mipador represents the ultimate freedom of movement and expression.
             </p>
-            <p class="mb-5 fs-5 lh-lg text-muted-custom">
-              Minimalist and timeless apparel that fits both lifestyle and work.
-              Crafted to reflect strength, balance, and the elegance of the albatross in flight.
-              Perfect for those who value good vibes, freedom, and living with purpose.
+            <p class="font-body mb-4" data-translate="about-description-2">
+              Our brand philosophy centers on creating clothing that doesn't just look good, 
+              but feels like a natural extension of your body. Every piece is designed to move with you, 
+              whether you're navigating city streets or exploring new horizons.
             </p>
-            <button class="btn btn-custom d-inline-flex align-items-center gap-3 px-4 py-3 wing-spread">
-              <span class="fw-bold">Discover The Store</span>
-              <i class="fas fa-arrow-right"></i>
-            </button>
+            <div class="d-flex align-items-center gap-4 mt-4">
+              <div class="text-center">
+                <div class="h3 classic-title font-heading mb-0">2</div>
+                <small class="text-muted">Collections</small>
+              </div>
+              <div class="text-center">
+                <div class="h3 classic-title font-heading mb-0">∞</div>
+                <small class="text-muted">Possibilities</small>
+              </div>
+              <div class="text-center">
+                <div class="h3 classic-title font-heading mb-0">100%</div>
+                <small class="text-muted">Freedom</small>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- Latest Works Section with Swiper -->
   <section id="selection" class="py-5 my-5 position-relative">
-    <div class="bg-light-alt position-absolute bottom-0 start-0 w-100 rounded-4 albatross-pattern" style="height: 60%;"></div>
-
+    <div class="bg-light-alt position-absolute bottom-0 start-0 w-100 rounded-4" style="height: 60%; background: linear-gradient(135deg, #fefce8 0%, #fff7ed 100%);"></div>
     <div class="container position-relative">
-      <div class="text-center mb-5">
-        <h2 class="content-title fw-bold text-balance d-flex align-items-center justify-content-center gap-3" data-aos="fade-up">
-          <i class="fas fa-feather feather-icon text-warning wing-spread"></i>
-          Our Selection
-          <i class="fas fa-feather feather-icon text-warning"></i>
-        </h2>
-        <p class="fs-5 text-muted-custom mt-3 soaring-text" data-aos="fade-up" data-aos-delay="200">Discover our carefully curated collection</p>
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="section-title font-heading mb-3" data-translate="selection-title">Two Worlds, One Vision</h2>
+        <p class="lead font-body" data-translate="selection-description">Choose your path: timeless elegance or bold expression</p>
       </div>
-
-      <!-- Swiper Works -->
-      <div class="swiper worksSwiper mb-5" data-aos="fade-up" data-aos-delay="400">
-        <div class="swiper-wrapper">
-
-          <!-- Product 1 -->
-          <div class="swiper-slide">
-            <a href="p1.html" class="card albatross-card text-decoration-none h-100 border-0 shadow-sm">
+      <!-- Collection Toggle -->
+      <div class="text-center mb-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="btn-group collection-toggle" role="group" aria-label="Collection filter">
+          <input type="radio" class="btn-check" name="collection" id="showAll" checked>
+          <label class="btn btn-outline-primary" for="showAll" data-translate="filter-all">All Collections</label>
+          <input type="radio" class="btn-check" name="collection" id="showClassic">
+          <label class="btn btn-outline-primary" for="showClassic" data-translate="filter-classic">Classic</label>
+          <input type="radio" class="btn-check" name="collection" id="showStreetwear">
+          <label class="btn btn-outline-secondary" for="showStreetwear" data-translate="filter-streetwear">Streetwear</label>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 product-item classic-item" data-aos="fade-up" data-aos-delay="100">
+          <article class="product-card classic h-100">
+            <a href="product.html" class="text-decoration-none h-100 d-block">
               <div class="position-relative overflow-hidden">
-                <img src="images/p1.jpg" class="img-fluid w-100" alt="Classic Jacket - Mipador Collection" style="aspect-ratio: 4/5; object-fit: cover;" />
+                <img src="images/p1.jpg" class="img-fluid w-100" alt="Premium Winter Jacket - Classic Collection by Mipador" style="aspect-ratio: 4/5; object-fit: cover;" />
+                <div class="collection-badge classic">Classic</div>
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-0 transition-all" style="transition: opacity 0.3s ease;"></div>
-                <div class="position-absolute top-3 end-3">
-                  <i class="fas fa-feather text-warning fs-4 feather-icon"></i>
+                <div class="position-absolute bottom-3 start-3 text-light opacity-0 transition-all" style="transition: opacity 0.3s ease;">
+                  <i class="fas fa-feather me-2"></i>Timeless Design
                 </div>
               </div>
-              <div class="card-body text-center p-4 horizon-line">
-                <div class="date-text mb-2 text-uppercase tracking-wide d-flex align-items-center justify-content-center gap-2">
-                  <i class="fas fa-wind text-warning"></i>
-                  Jacket Collection
+              <div class="p-4">
+                <h3 class="font-heading classic-title mb-2">Premium Winter Jacket</h3>
+                <p class="font-body text-muted mb-3">Elegant comfort for every season</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="h5 classic-title mb-0">300 MAD</span>
+                  <small class="text-muted">Classic Collection</small>
                 </div>
-                <h3 class="subtitle mb-0 fw-bold">Classic Jacket</h3>
               </div>
             </a>
-          </div>
-
-          <!-- Product 2 -->
-          <div class="swiper-slide">
-            <article class="card albatross-card text-decoration-none h-100 border-0 shadow-sm">
-              <div class="position-relative overflow-hidden">
-                <img src="images/p2.jpg" class="img-fluid w-100" alt="Mipador Collection Item" style="aspect-ratio: 4/5; object-fit: cover;" />
-                <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-0 transition-all" style="transition: opacity 0.3s ease;"></div>
-                <div class="position-absolute top-3 end-3">
-                  <i class="fas fa-dove text-warning fs-4 feather-icon"></i>
-                </div>
-              </div>
-              <div class="card-body text-center p-4 horizon-line">
-                <div class="date-text mb-2 text-uppercase tracking-wide d-flex align-items-center justify-content-center gap-2">
-                  <i class="fas fa-star text-warning"></i>
-                  New Arrival
-                </div>
-                <h3 class="subtitle mb-0 fw-bold">Coming Soon</h3>
-              </div>
-            </article>
-          </div>
-
-          <!-- Product 3 -->
-          <div class="swiper-slide">
-            <article class="card albatross-card text-decoration-none h-100 border-0 shadow-sm">
-              <div class="position-relative overflow-hidden">
-                <img src="images/p3.jpg" class="img-fluid w-100" alt="Mipador Collection Item" style="aspect-ratio: 4/5; object-fit: cover;" />
-                <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-0 transition-all" style="transition: opacity 0.3s ease;"></div>
-                <div class="position-absolute top-3 end-3">
-                  <i class="fas fa-feather-alt text-warning fs-4 feather-icon"></i>
-                </div>
-              </div>
-              <div class="card-body text-center p-4 horizon-line">
-                <div class="date-text mb-2 text-uppercase tracking-wide d-flex align-items-center justify-content-center gap-2">
-                  <i class="fas fa-gem text-warning"></i>
-                  New Arrival
-                </div>
-                <h3 class="subtitle mb-0 fw-bold">Coming Soon</h3>
-              </div>
-            </article>
-          </div>
-
+          </article>
         </div>
-        <div class="swiper-pagination mt-4"></div>
+        <div class="col-lg-4 col-md-6 product-item streetwear-item" data-aos="fade-up" data-aos-delay="200">
+          <article class="product-card streetwear h-100">
+            <a href="product.html" class="text-decoration-none h-100 d-block">
+              <div class="position-relative overflow-hidden">
+                <img src="images/p2.jpg" class="img-fluid w-100" alt="Urban Explorer Jacket - Streetwear Collection by Mipador" style="aspect-ratio: 4/5; object-fit: cover;" />
+                <div class="collection-badge streetwear">Streetwear</div>
+                <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-0 transition-all" style="transition: opacity 0.3s ease;"></div>
+                <div class="position-absolute bottom-3 start-3 text-light opacity-0 transition-all" style="transition: opacity 0.3s ease;">
+                  <i class="fas fa-bolt me-2"></i>Urban Edge
+                </div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-heading streetwear-title mb-2">Urban Explorer Jacket</h3>
+                <p class="font-body text-muted mb-3">Bold design for city adventures</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="h5 streetwear-title mb-0">350 MAD</span>
+                  <small class="text-muted">Streetwear Collection</small>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Brand Philosophy Section -->
-  <section id="lifestyle" class="py-5 my-5 position-relative overflow-hidden sky-gradient rounded-4">
+  <section id="lifestyle" class="py-5 my-5 position-relative overflow-hidden section-streetwear rounded-4">
     <div class="container position-relative">
-
-      <!-- Section Title Background -->
-      <div class="position-absolute top-0 start-100 translate-middle-x d-none d-lg-block">
-        <div class="syne-font section-title user-select-none soaring-text" data-aos="fade-up" aria-hidden="true">Lifestyle</div>
-        <div class="syne-font section-title section-title-bg user-select-none soaring-text" data-aos="fade-up" data-aos-delay="200" aria-hidden="true">Lifestyle</div>
-        <div class="syne-font section-title section-title-bg user-select-none soaring-text" data-aos="fade-up" data-aos-delay="400" aria-hidden="true">Lifestyle</div>
-      </div>
-
-      <div class="row g-4 g-lg-5 align-items-center">
+      <div class="row align-items-center g-5">
         <div class="col-lg-7 order-2 order-lg-1">
-          <div class="bg-light-alt p-4 p-lg-5 mt-lg-5 rounded-4 shadow-sm albatross-pattern horizon-line" data-aos="clip-top" data-aos-delay="1000">
-            <h2 class="content-title mb-5 fw-bold d-flex align-items-center gap-3">
-              Lifestyle
-            </h2>
-
-            <div class="row g-4">
-              <div class="col-12">
-                <div class="d-flex gap-3 mb-4 wing-spread p-3 rounded-3">
-                  <div>
-                    <h3 class="subtitle mb-3 fw-bold wind-lines">Freedom & Balance</h3>
-                    <p class="mb-0 lh-lg">
-                      Inspired by the albatross, Mipador designs clothing that lets you move freely and live in balance.
-                      Every piece blends comfort, style, and a positive mindset.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="d-flex gap-3 mb-4 wing-spread p-3 rounded-3">
-                  <div>
-                    <h3 class="subtitle mb-3 fw-bold wind-lines">Good Vibes Everyday</h3>
-                    <p class="mb-0 lh-lg">
-                      Our apparel is created for men who work hard, value peace, and enjoy life. Mipador is about feeling
-                      confident, relaxed, and energized every day.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="d-flex gap-3 wing-spread p-3 rounded-3">
-                  <div>
-                    <h3 class="subtitle mb-3 fw-bold wind-lines">Timeless & Minimal</h3>
-                    <p class="mb-0 lh-lg">
-                      Clean lines, minimalist designs, and premium materials make Mipador versatile for any lifestyle.
-                      Fashion that lasts and inspires.
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div class="pe-lg-5" data-aos="fade-right" data-aos-duration="1000">
+            <h2 class="section-title streetwear-title font-heading mb-4 text-light" data-translate="lifestyle-title">Urban Freedom</h2>
+            <p class="lead font-body mb-4 text-light" data-translate="lifestyle-description-1">
+              The streets are your runway. Our streetwear collection is designed for those who dare to stand out, 
+              who see the city as their canvas and style as their voice.
+            </p>
+            <p class="font-body mb-4 text-light opacity-75" data-translate="lifestyle-description-2">
+              From underground culture to mainstream fashion, we bridge the gap between authenticity and accessibility. 
+              Each piece tells a story of rebellion, creativity, and the relentless pursuit of self-expression.
+            </p>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <div class="badge bg-light text-dark px-3 py-2">Bold Graphics</div>
+              <div class="badge bg-light text-dark px-3 py-2">Premium Materials</div>
+              <div class="badge bg-light text-dark px-3 py-2">Limited Editions</div>
+              <div class="badge bg-light text-dark px-3 py-2">Street Credibility</div>
             </div>
           </div>
         </div>
-
         <div class="col-lg-5 order-1 order-lg-2">
           <div class="position-relative">
-            <img src="images/lifestyle2.jpg" class="img-fluid rounded-4 w-100 shadow-lg albatross-card" alt="Mipador Lifestyle"
+            <img src="images/lifestyle2.jpg" class="img-fluid rounded-4 w-100 shadow-lg streetwear-card" alt="Mipador Streetwear Lifestyle - Urban fashion and street culture"
               data-aos="fade-left" style="aspect-ratio: 4/5; object-fit: cover;" />
-            <div class="position-absolute top-0 start-0 w-100 h-100 rounded-4" style="background: linear-gradient(135deg, rgba(58,73,80,0.1), transparent);"></div>
-            <div class="position-absolute top-4 end-4">
-              <i class="fas fa-feather-alt text-warning fs-1 feather-icon opacity-75"></i>
-            </div>
+            <div class="position-absolute top-0 start-0 w-100 h-100 rounded-4" style="background: linear-gradient(135deg, rgba(99,102,241,0.1), transparent);"></div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section id="cta" class="py-5 my-5 bg-light-alt rounded-5 m-3 m-lg-4 shadow-sm albatross-pattern" data-aos="clip-bottom">
+  <section id="cta" class="py-5 my-5 bg-light-alt rounded-5 m-3 m-lg-4 shadow-sm" data-aos="clip-bottom" style="background: linear-gradient(135deg, #fefce8 0%, #fff7ed 100%);">
     <div class="container">
-      <div class="row align-items-center g-4 g-lg-5">
-
-        <!-- Text -->
-        <div class="col-lg-6 p-4" data-aos="fade-right">
-          <h2 class="content-title mb-4 wind-lines fw-bold text-balance d-flex align-items-center gap-3">
-            <i class="fas fa-paper-plane feather-icon text-warning fs-2"></i>
-            Stay in the Loop
-          </h2>
-          <p class="mb-4 fs-5 lh-lg">
-            Join the Mipador community and be the first to discover our latest collections, lifestyle tips, and special
-            releases. Feel free, live inspired, and move with good vibes every day.
-          </p>
-          <div class="d-flex gap-3 text-muted-custom align-items-center">
-            <i class="fas fa-check-circle text-success feather-icon"></i>
-            <span>Exclusive early access to new collections</span>
-          </div>
+      <div class="text-center">
+        <h2 class="section-title font-heading mb-4" data-translate="cta-title">Ready to Spread Your Wings?</h2>
+        <p class="lead font-body mb-5" data-translate="cta-description" style="max-width: 600px; margin: 0 auto;">
+          Join the Mipador community and discover clothing that moves with your spirit. 
+          Whether you choose classic elegance or streetwear boldness, freedom awaits.
+        </p>
+        <div class="d-flex flex-column flex-md-row gap-3 justify-content-center" data-aos="fade-up" data-aos-delay="400">
+          <a href="product.html" class="btn btn-primary btn-lg px-5" data-translate="cta-shop-now">
+            <i class="fas fa-shopping-bag me-2"></i>Shop Now
+          </a>
+          <a href="#about" class="btn btn-outline-secondary btn-lg px-5" data-translate="cta-learn-more">
+            <i class="fas fa-info-circle me-2"></i>Learn More
+          </a>
         </div>
-
-        <!-- Form -->
-        <div class="col-lg-6" data-aos="fade-left">
-          <form class="d-flex flex-column gap-4 p-4 bg-white rounded-4 shadow-sm wing-spread horizon-line" role="form" aria-label="Contact form">
-            <div class="form-floating">
-              <input type="text" class="form-control-custom form-control border-2" id="name" placeholder="Your name..." required />
-              <label for="name" class="text-muted d-flex align-items-center gap-2">
-                <i class="fas fa-user text-warning"></i>
-                Your name
-              </label>
-            </div>
-            <div class="form-floating">
-              <input type="email" class="form-control-custom form-control border-2" id="email" placeholder="Your email..." required />
-              <label for="email" class="text-muted d-flex align-items-center gap-2">
-                <i class="fas fa-envelope text-warning"></i>
-                Your email
-              </label>
-            </div>
-            <div class="form-floating">
-              <textarea class="form-control-custom form-control border-2" id="message" placeholder="Your message..." rows="4" style="height: 120px;" required></textarea>
-              <label for="message" class="text-muted d-flex align-items-center gap-2">
-                <i class="fas fa-comment text-warning"></i>
-                Your message
-              </label>
-            </div>
-            <button type="submit" class="btn btn-custom d-flex align-items-center justify-content-center gap-3 py-3 wing-spread">
-              <i class="fas fa-feather feather-icon"></i>
-              <span class="fw-bold wind-lines">Join Now</span>
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </form>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- Footer Section -->
-  <footer id="footer" class="py-5 bg-dark-custom rounded-4 m-3 m-lg-4 shadow-lg albatross-pattern" data-aos="clip-bottom" role="contentinfo">
+  <footer id="footer" class="py-5 footer rounded-4 m-3 m-lg-4 shadow-lg" data-aos="clip-bottom" role="contentinfo">
     <div class="container">
       <div class="row mb-5 g-4">
-
         <div class="col-lg-4 col-md-6">
           <div data-aos="fade-right" data-aos-duration="1000" class="mb-4">
-            <img src="images/logofooter.png" alt="Mipador Logo" class="footer-logo img-fluid wing-spread" style="max-width: 200px;" />
+            <img src="images/logofooter.png" alt="Mipador Footer Logo" class="footer-logo img-fluid wing-spread" style="max-width: 200px;" />
           </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 p-4">
-          <h3 class="text-light-custom mb-4 fw-bold d-flex align-items-center gap-2">
-            <i class="fas fa-paper-plane feather-icon text-warning"></i>
-            Get in Touch
-          </h3>
-          <p class="text-light-custom mb-3">
-            Just feel free to contact us.
-          </p>
-          <p class="text-light-custom fst-italic fs-5 mb-4">
-            <a href="mailto:mipador.store@gmail.com" class="text-light-custom text-decoration-none hover-underline wing-spread">
-              <i class="fas fa-envelope me-2 feather-icon"></i>
-              mipador.store@gmail.com
-            </a>
+          <p class="font-body text-light opacity-75 mb-4" data-translate="footer-description">
+            Made to move free. Inspired by the albatross, designed for those who dare to soar.
           </p>
           <div class="d-flex gap-3">
-            <a href="https://wa.me/212612918900" target="_blank" rel="noopener" aria-label="WhatsApp" class="text-light-custom wing-spread">
-              <i class="fab fa-whatsapp social-icon fs-4 feather-icon"></i>
+            <a href="#" class="text-light opacity-75 hover-opacity-100" aria-label="Follow us on Instagram">
+              <i class="fab fa-instagram fa-lg"></i>
             </a>
-            <a href="https://www.instagram.com/mipador" target="_blank" rel="noopener" aria-label="Instagram" class="text-light-custom wing-spread">
-              <i class="fab fa-instagram social-icon fs-4 feather-icon"></i>
+            <a href="#" class="text-light opacity-75 hover-opacity-100" aria-label="Follow us on Facebook">
+              <i class="fab fa-facebook fa-lg"></i>
+            </a>
+            <a href="#" class="text-light opacity-75 hover-opacity-100" aria-label="Follow us on Twitter">
+              <i class="fab fa-twitter fa-lg"></i>
             </a>
           </div>
         </div>
-
-        <div class="col-lg-4  p-4">
-          <h3 class="text-light-custom mb-4 fw-bold d-flex align-items-center gap-2">
-            <i class="fas fa-map-marker-alt feather-icon text-warning"></i>
-            Location
-          </h3>
-          <address class="text-light-custom lh-lg">
-            <i class="fas fa-map-marker-alt me-2 text-warning"></i>
-            Casablanca, Morocco<br>
-            <i class="fas fa-phone me-2 text-warning"></i>
-            <a href="tel:+212612918900" class="text-light-custom text-decoration-none wind-lines">+212 612918900</a>
-          </address>
+        <div class="col-lg-2 col-md-6">
+          <h6 class="font-heading text-light mb-3" data-translate="footer-collections">Collections</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#selection" class="text-light opacity-75 text-decoration-none hover-opacity-100" data-translate="filter-classic">Classic</a></li>
+            <li class="mb-2"><a href="#lifestyle" class="text-light opacity-75 text-decoration-none hover-opacity-100" data-translate="filter-streetwear">Streetwear</a></li>
+            <li class="mb-2"><a href="product.html" class="text-light opacity-75 text-decoration-none hover-opacity-100" data-translate="footer-new-arrivals">New Arrivals</a></li>
+          </ul>
         </div>
-
+        <div class="col-lg-2 col-md-6">
+          <h6 class="font-heading text-light mb-3" data-translate="footer-company">Company</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#about" class="text-light opacity-75 text-decoration-none hover-opacity-100" data-translate="nav-about">About Us</a></li>
+            <li class="mb-2"><a href="#cta" class="text-light opacity-75 text-decoration-none hover-opacity-100" data-translate="nav-contact">Contact</a></li>
+            <li class="mb-2"><a href="#" class="text-light opacity-75 text-decoration-none hover-opacity-100" data-translate="footer-careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h6 class="font-heading text-light mb-3" data-translate="footer-stay-connected">Stay Connected</h6>
+          <p class="font-body text-light opacity-75 mb-3" data-translate="footer-subscribe">
+            Subscribe to get updates on new collections and exclusive offers.
+          </p>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email address" data-translate-placeholder="footer-email-placeholder">
+            <button class="btn btn-primary" type="submit" aria-label="Subscribe to newsletter">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
       </div>
-
-      <div class="border-top border-light pt-4 horizon-line p4">
+      <div class="border-top border-light pt-4 mt-4">
         <div class="row align-items-center">
           <div class="col-md-6">
-            <p class="text-light-custom mb-0 d-flex align-items-center gap-2">
-              <i class="fas fa-feather text-warning feather-icon"></i>
-              ©2025 Mipador. All rights reserved.
+            <p class="text-light opacity-75 mb-0 font-body" data-translate="footer-copyright">
+              ©2025 Mipador - Made to move free 🪽
             </p>
           </div>
-          <div class="col-md-6 text-md-end mt-3 mt-md-0">
-            <span class="text-light-custom small d-flex align-items-center justify-content-md-end gap-2">
-              Made with ❤️ for freedom
-              <i class="fas fa-dove text-warning feather-icon"></i>
-            </span>
+          <div class="col-md-6 text-md-end">
+            <div class="d-flex justify-content-md-end gap-3 mt-3 mt-md-0">
+              <a href="#" class="text-light opacity-75 text-decoration-none hover-opacity-100 small" data-translate="footer-privacy">Privacy Policy</a>
+              <a href="#" class="text-light opacity-75 text-decoration-none hover-opacity-100 small" data-translate="footer-terms">Terms of Service</a>
+            </div>
           </div>
         </div>
       </div>
@@ -485,16 +332,209 @@
 
   <!-- Bootstrap JS Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- AOS Animation JS -->
-  <script src="https://unpkg.aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <!-- JQuery js -->
-  <script src="js/jquery-1.11.0.min.js"></script>
-  <!-- Plugins js -->
-  <script src="js/plugins.js"></script>
   <!-- Script js -->
   <script src="js/script.js"></script>
-</body>
 
+  <!-- Language Switching and Collection Filtering -->
+  <script>
+    const translations = {
+      en: {
+        "nav-home": "Home",
+        "nav-about": "About",
+        "nav-selection": "Selection",
+        "nav-lifestyle": "Lifestyle",
+        "nav-contact": "Contact",
+        "hero-title": "Made to Move Free",
+        "hero-description": "Discover the perfect balance between timeless elegance and bold street style. Inspired by the albatross, our collections embody freedom, movement, and authentic expression.",
+        "explore-classic": "Explore Classic",
+        "discover-streetwear": "Discover Streetwear",
+        "about-title": "The Spirit of the Albatross",
+        "about-description-1": "Like the majestic albatross that soars effortlessly across vast oceans, Mipador represents the ultimate freedom of movement and expression.",
+        "about-description-2": "Our brand philosophy centers on creating clothing that doesn't just look good, but feels like a natural extension of your body. Every piece is designed to move with you, whether you're navigating city streets or exploring new horizons.",
+        "selection-title": "Two Worlds, One Vision",
+        "selection-description": "Choose your path: timeless elegance or bold expression",
+        "filter-all": "All Collections",
+        "filter-classic": "Classic",
+        "filter-streetwear": "Streetwear",
+        "lifestyle-title": "Urban Freedom",
+        "lifestyle-description-1": "The streets are your runway. Our streetwear collection is designed for those who dare to stand out, who see the city as their canvas and style as their voice.",
+        "lifestyle-description-2": "From underground culture to mainstream fashion, we bridge the gap between authenticity and accessibility. Each piece tells a story of rebellion, creativity, and the relentless pursuit of self-expression.",
+        "cta-title": "Ready to Spread Your Wings?",
+        "cta-description": "Join the Mipador community and discover clothing that moves with your spirit. Whether you choose classic elegance or streetwear boldness, freedom awaits.",
+        "cta-shop-now": "Shop Now",
+        "cta-learn-more": "Learn More",
+        "footer-description": "Made to move free. Inspired by the albatross, designed for those who dare to soar.",
+        "footer-collections": "Collections",
+        "footer-new-arrivals": "New Arrivals",
+        "footer-company": "Company",
+        "footer-careers": "Careers",
+        "footer-stay-connected": "Stay Connected",
+        "footer-subscribe": "Subscribe to get updates on new collections and exclusive offers.",
+        "footer-email-placeholder": "Enter your email",
+        "footer-copyright": "©2025 Mipador - Made to move free 🪽",
+        "footer-privacy": "Privacy Policy",
+        "footer-terms": "Terms of Service"
+      },
+      fr: {
+        "nav-home": "Accueil",
+        "nav-about": "À propos",
+        "nav-selection": "Sélection",
+        "nav-lifestyle": "Style de vie",
+        "nav-contact": "Contact",
+        "hero-title": "Faits pour Bouger Librement",
+        "hero-description": "Découvrez l'équilibre parfait entre l'élégance intemporelle et le style audacieux. Inspirées de l'albatros, nos collections incarnent la liberté, le mouvement et l'expression authentique.",
+        "explore-classic": "Explorer Classic",
+        "discover-streetwear": "Découvrir Streetwear",
+        "about-title": "L'Esprit de l'Albatros",
+        "about-description-1": "Comme le majestueux albatros qui plane sans effort au-dessus des vastes océans, Mipador représente la liberté ultime de mouvement et d'expression.",
+        "about-description-2": "Notre philosophie de marque repose sur la création de vêtements qui ne se contentent pas d'être esthétiques, mais qui deviennent une extension naturelle de votre corps. Chaque pièce est conçue pour bouger avec vous, que vous naviguiez dans les rues de la ville ou exploriez de nouveaux horizons.",
+        "selection-title": "Deux Mondes, Une Vision",
+        "selection-description": "Choisissez votre voie : élégance intemporelle ou expression audacieuse",
+        "filter-all": "Toutes les Collections",
+        "filter-classic": "Classique",
+        "filter-streetwear": "Streetwear",
+        "lifestyle-title": "Liberté Urbaine",
+        "lifestyle-description-1": "Les rues sont votre podium. Notre collection streetwear est conçue pour ceux qui osent se démarquer, qui voient la ville comme leur toile et le style comme leur voix.",
+        "lifestyle-description-2": "De la culture underground à la mode mainstream, nous comblons le fossé entre authenticité et accessibilité. Chaque pièce raconte une histoire de rébellion, de créativité et de quête incessante d'expression de soi.",
+        "cta-title": "Prêt à Déployer Vos Ailes ?",
+        "cta-description": "Rejoignez la communauté Mipador et découvrez des vêtements qui suivent votre esprit. Que vous choisissiez l'élégance classique ou l'audace du streetwear, la liberté vous attend.",
+        "cta-shop-now": "Acheter Maintenant",
+        "cta-learn-more": "En Savoir Plus",
+        "footer-description": "Faits pour bouger librement. Inspirés par l'albatros, conçus pour ceux qui osent s'envoler.",
+        "footer-collections": "Collections",
+        "footer-new-arrivals": "Nouvelles Arrivées",
+        "footer-company": "Entreprise",
+        "footer-careers": "Carrières",
+        "footer-stay-connected": "Restez Connecté",
+        "footer-subscribe": "Abonnez-vous pour recevoir des mises à jour sur les nouvelles collections et offres exclusives.",
+        "footer-email-placeholder": "Entrez votre email",
+        "footer-copyright": "©2025 Mipador - Faits pour bouger librement 🪽",
+        "footer-privacy": "Politique de Confidentialité",
+        "footer-terms": "Conditions de Service"
+      },
+      ar: {
+        "nav-home": "الرئيسية",
+        "nav-about": "من نحن",
+        "nav-selection": "المجموعات",
+        "nav-lifestyle": "نمط الحياة",
+        "nav-contact": "اتصل بنا",
+        "hero-title": "مصمم للحركة الحرة",
+        "hero-description": "اكتشف التوازن المثالي بين الأناقة الكلاسيكية والأسلوب الجريء. مستوحاة من طائر القطرس، تجسد مجموعاتنا الحرية والحركة والتعبير الأصيل.",
+        "explore-classic": "اكتشف الكلاسيكي",
+        "discover-streetwear": "اكتشف ستريت وير",
+        "about-title": "روح القطرس",
+        "about-description-1": "مثل طائر القطرس المهيب الذي يحلق بسهولة فوق المحيطات الشاسعة، يمثل ميبادور الحرية القصوى في الحركة والتعبير.",
+        "about-description-2": "تركز فلسفة علامتنا التجارية على إنشاء ملابس لا تبدو جيدة فحسب، بل تشعر وكأنها امتداد طبيعي لجسمك. تم تصميم كل قطعة لتتحرك معك، سواء كنت تتجول في شوارع المدينة أو تستكشف آفاقًا جديدة.",
+        "selection-title": "عالمان، رؤية واحدة",
+        "selection-description": "اختر طريقك: الأناقة الكلاسيكية أو التعبير الجريء",
+        "filter-all": "جميع المجموعات",
+        "filter-classic": "كلاسيكي",
+        "filter-streetwear": "ستريت وير",
+        "lifestyle-title": "الحرية الحضرية",
+        "lifestyle-description-1": "الشوارع هي منصتك. تم تصميم مجموعتنا من الملابس الحضرية لأولئك الذين يجرؤون على التميز، الذين يرون المدينة كلوحة فنية وأسلوبهم كصوتهم.",
+        "lifestyle-description-2": "من الثقافة الباطنية إلى الموضة السائدة، نحن نجسر الفجوة بين الأصالة وسهولة الوصول. كل قطعة تحكي قصة تمرد، إبداع، والسعي الدؤوب للتعبير عن الذات.",
+        "cta-title": "هل أنت مستعد لنشر أجنحتك؟",
+        "cta-description": "انضم إلى مجتمع ميبادور واكتشف ملابس تتحرك مع روحك. سواء اخترت الأناقة الكلاسيكية أو الجرأة الحضرية، الحرية في انتظارك.",
+        "cta-shop-now": "تسوق الآن",
+        "cta-learn-more": "تعرف على المزيد",
+        "footer-description": "مصمم للحركة الحرة. مستوحى من القطرس، مصمم لأولئك الذين يجرؤون على التحليق.",
+        "footer-collections": "المجموعات",
+        "footer-new-arrivals": "الوافدون الجدد",
+        "footer-company": "الشركة",
+        "footer-careers": "وظائف",
+        "footer-stay-connected": "ابق على اتصال",
+        "footer-subscribe": "اشترك للحصول على تحديثات حول المجموعات الجديدة والعروض الحصرية.",
+        "footer-email-placeholder": "أدخل بريدك الإلكتروني",
+        "footer-copyright": "©2025 ميبادور - مصمم للحركة الحرة 🪽",
+        "footer-privacy": "سياسة الخصوصية",
+        "footer-terms": "شروط الخدمة"
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const languageLinks = document.querySelectorAll("[data-lang]");
+      const currentLangSpan = document.getElementById("currentLang");
+
+      // Apply translations to elements with data-translate attribute
+      function applyTranslations(lang) {
+        document.querySelectorAll("[data-translate]").forEach(element => {
+          const key = element.getAttribute("data-translate");
+          if (translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+        document.querySelectorAll("[data-translate-placeholder]").forEach(element => {
+          const key = element.getAttribute("data-translate-placeholder");
+          if (translations[lang][key]) {
+            element.placeholder = translations[lang][key];
+          }
+        });
+        document.documentElement.lang = lang;
+        currentLangSpan.textContent = lang.toUpperCase();
+      }
+
+      // Set default language
+      applyTranslations("en");
+
+      // Language switcher event listeners
+      languageLinks.forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          const selectedLang = link.getAttribute("data-lang");
+          applyTranslations(selectedLang);
+          link.classList.add("active");
+          setTimeout(() => link.classList.remove("active"), 200);
+        });
+      });
+
+      // Collection filtering functionality
+      const collectionButtons = document.querySelectorAll('input[name="collection"]');
+      const productItems = document.querySelectorAll('.product-item');
+      
+      collectionButtons.forEach(button => {
+        button.addEventListener('change', function() {
+          const filter = this.id;
+          productItems.forEach(item => {
+            if (filter === 'showAll') {
+              item.style.display = 'block';
+              item.classList.add('fade-in-up');
+            } else if (filter === 'showClassic' && item.classList.contains('classic-item')) {
+              item.style.display = 'block';
+              item.classList.add('fade-in-up');
+            } else if (filter === 'showStreetwear' && item.classList.contains('streetwear-item')) {
+              item.style.display = 'block';
+              item.classList.add('fade-in-up');
+            } else {
+              item.style.display = 'none';
+              item.classList.remove('fade-in-up');
+            }
+          });
+        });
+      });
+
+      // Enhanced hover effects for product cards
+      const productCards = document.querySelectorAll('.product-card');
+      productCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          const overlay = this.querySelector('.bg-dark');
+          const bottomText = this.querySelector('.position-absolute.bottom-3');
+          if (overlay) overlay.style.opacity = '0.3';
+          if (bottomText) bottomText.style.opacity = '1';
+        });
+        card.addEventListener('mouseleave', function() {
+          const overlay = this.querySelector('.bg-dark');
+          const bottomText = this.querySelector('.position-absolute.bottom-3');
+          if (overlay) overlay.style.opacity = '0';
+          if (bottomText) bottomText.style.opacity = '0';
+        });
+      });
+    });
+  </script>
+</body>
 </html>
