@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: cursive ;
+  font-family: system-ui ;
   line-height: 1.6;
   color: var(--text-dark);
   background: var(--secondary-gradient);
@@ -774,7 +774,7 @@ body {
 }
 
 .footer-brand {
-  font-family:  cursive;
+  font-family:  system-ui;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
