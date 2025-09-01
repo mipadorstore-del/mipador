@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Winter Jacket - Mipador</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="productdetails.css">
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <div class="language-dropdown">
+            <button class="language-btn" onclick="toggleLanguageMenu()">
+                <i class="fas fa-globe"></i>
+                <span id="currentLang">EN</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="language-menu" id="languageMenu">
+                <div class="language-option" onclick="changeLanguage('en')">English</div>
+                <div class="language-option" onclick="changeLanguage('fr')">Français</div>
+                <div class="language-option" onclick="changeLanguage('ar')">العربية</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="product-grid">
+            <!-- Product Gallery -->
+            <div class="product-gallery">
+                <div class="main-image-container" onclick="openZoom(0)">
+                    <img class="main-image" id="mainImage" src="images/pclassic1.jpg" alt="Premium Winter Jacket">
+                    <div class="zoom-hint">
+                        <i class="fas fa-search-plus"></i>
+                        <span data-translate="clickToZoom">Click to zoom</span>
+                    </div>
+                </div>
+                
+                <div class="thumbnail-gallery" id="thumbnailGallery">
+                    <div class="thumbnail active" onclick="changeMainImage(this, 0)" data-src="images/pclassic1.jpg">
+                        <img src="images/pclassic1.jpg" alt="Front View">
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage(this, 1)" data-src="images/pclassic2.jpg">
+                        <img src="images/pclassic2.jpg" alt="Side View">
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage(this, 2)" data-src="images/pclassic3.jpg">
+                        <img src="images/pclassic3.jpg" alt="Back View">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="product-details">
+                <h1 class="product-title" data-translate="productTitle">Premium Winter Jacket</h1>
+                <div class="product-price">300 MAD</div>
+
+                <div class="urgency-banner">
+                    <i class="fas fa-fire"></i>
+                    <span data-translate="urgencyText">Hurry! Only 11 pieces left in stock!</span>
+                </div>
+
+                <div class="viewers-count">
+                    <i class="fas fa-eye"></i>
+                    <span data-translate="viewersText">6 people are viewing this right now</span>
+                </div>
+
+                <p class="product-description" data-translate="productDescription">
+                    Stay warm and stylish this winter with our premium insulated jacket. 
+                    Designed for comfort and durability, perfect for both casual and outdoor activities. 
+                    Made to move free with the spirit of the albatross.
+                </p>
+
+                <!-- Size Selector -->
+                <div class="selector-section">
+                    <h5 class="selector-title" data-translate="sizeLabel">Size</h5>
+                    <div class="size-selector">
+                        <div class="size-option" onclick="selectSize(this)">M</div>
+                        <div class="size-option active" onclick="selectSize(this)">L</div>
+                        <div class="size-option" onclick="selectSize(this)">XL</div>
+                        <div class="size-option" onclick="selectSize(this)">XXL</div>
+                        <div class="size-option" onclick="selectSize(this)">3XL</div>
+                    </div>
+                </div>
+
+                <!-- Color Selector -->
+                <div class="selector-section">
+                    <h5 class="selector-title" data-translate="colorLabel">Color</h5>
+                    <div class="color-selector">
+                        <div class="color-option color-black active" onclick="selectColor(this)" data-color="black" title="Midnight Black"></div>
+                    </div>
+                </div>
+
+                <!-- Bundle Offers -->
+                <div class="bundle-offers">
+                    <h5 class="bundle-title" data-translate="bundleTitle">🎁 Special Offers 🎁</h5>
+                    
+                    <div class="bundle-option active" onclick="selectBundle(this)" data-price="300" data-quantity="1">
+                        <div class="bundle-content">
+                            <span data-translate="bundle1">Buy 1 for 300 MAD + Free Shipping</span>
+                            <span class="bundle-price">300 MAD</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bundle-option" onclick="selectBundle(this)" data-price="550" data-quantity="2">
+                        <div class="bundle-content">
+                            <span data-translate="bundle2">Buy 2 for 550 MAD + Free Shipping 🎁</span>
+                            <div>
+                                <span class="bundle-price">550 MAD</span>
+                                <span class="bundle-savings" data-translate="save50">Save 50 MAD</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bundle-option" onclick="selectBundle(this)" data-price="800" data-quantity="3">
+                        <div class="bundle-content">
+                            <span data-translate="bundle3">Buy 3 for 800 MAD + Free Shipping 🎁</span>
+                            <div>
+                                <span class="bundle-price">800 MAD</span>
+                                <span class="bundle-savings" data-translate="save100">Save 100 MAD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Form -->
+                <div class="order-form">
+                    <h5 class="form-title" data-translate="orderTitle">Complete Your Order</h5>
+                    <div id="orderForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label" data-translate="nameLabel">Full Name</label>
+                                <input type="text" class="form-input" id="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" data-translate="phoneLabel">Phone Number</label>
+                                <input type="tel" class="form-input" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" data-translate="cityLabel">City</label>
+                                <input type="text" class="form-input" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" data-translate="addressLabel">Address</label>
+                                <input type="text" class="form-input" id="address" required>
+                            </div>
+                        </div>
+
+                        <button type="button" class="order-btn" id="orderBtn" onclick="submitOrder()">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span data-translate="orderButton">Order Now - 300 MAD</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Specifications -->
+                <div class="specs-section">
+                    <h5 class="selector-title" data-translate="specsTitle">Product Specifications</h5>
+                    <ul class="specs-list">
+                        <li class="specs-item">
+                            <span class="spec-label" data-translate="materialLabel">Material</span>
+                            <span class="spec-value" data-translate="materialValue">Premium Polyester Blend</span>
+                        </li>
+                        <li class="specs-item">
+                            <span class="spec-label" data-translate="featuresLabel">Features</span>
+                            <span class="spec-value" data-translate="featuresValue">Waterproof & Windproof</span>
+                        </li>
+                        <li class="specs-item">
+                            <span class="spec-label" data-translate="careLabel">Care</span>
+                            <span class="spec-value" data-translate="careValue">Machine Washable</span>
+                        </li>
+                        <li class="specs-item">
+                            <span class="spec-label" data-translate="warrantyLabel">Warranty</span>
+                            <span class="spec-value" data-translate="warrantyValue">1 Year Limited</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Zoom Modal -->
+    <div class="zoom-modal" id="zoomModal" onclick="closeZoom(event)">
+        <div class="zoom-container">
+            <img class="zoom-image" id="zoomImage" alt="Zoomed product image">
+            <div class="zoom-controls">
+                <button class="zoom-btn" onclick="zoomIn()" title="Zoom In">
+                    <i class="fas fa-close"></i>
+                </button>
+            </div>
+            <div class="zoom-counter" id="zoomCounter">1 / 6</div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="d-flex justify-content-center" data-aos="fade-right" data-aos-duration="1000">
+                <img src="images/logofooter.png" alt="Mipador Logo" class="footer-logo img-fluid" />
+            </div>
+            <div class="d-flex justify-content-center border-top border-light pt-4 mt-4">
+                <p class="text-light-custom text-center mb-0">
+                    ©2025 Mipador - Made to move free 🪽
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global variables
+        let currentImageIndex = 0;
+        let zoomLevel = 1;
+        let translateX = 0;
+        let translateY = 0;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+        let selectedBundle = { price: 300, quantity: 1 };
+
+        // Product images array
+        const productImages = [
+            {
+                src: "images/pclassic1.jpg",
+                alt: "Front View"
+            },
+            {
+                src: "images/pclassic2.jpg",
+                alt: "Side View"
+            },
+            {
+                src: "images/pclassic3.jpg",
+                alt: "Back View"
+            }
+        ];
+
+        // Translations
+        const translations = {
+            en: {
+                productTitle: "Premium Winter Jacket",
+                urgencyText: "Hurry! Only 11 pieces left in stock!",
+                viewersText: "6 people are viewing this right now",
+                productDescription: "Stay warm and stylish this winter with our premium insulated jacket. Designed for comfort and durability, perfect for both casual and outdoor activities. Made to move free with the spirit of the albatross.",
+                sizeLabel: "Size",
+                colorLabel: "Color",
+                bundleTitle: "🎁 Special Offers 🎁",
+                bundle1: "Buy 1 for 300 MAD + Free Shipping",
+                bundle2: "Buy 2 for 550 MAD + Free Shipping 🎁",
+                bundle3: "Buy 3 for 800 MAD + Free Shipping 🎁",
+                save50: "Save 50 MAD",
+                save100: "Save 100 MAD",
+                orderTitle: "Complete Your Order",
+                nameLabel: "Full Name",
+                phoneLabel: "Phone Number",
+                cityLabel: "City",
+                addressLabel: "Address",
+                orderButton: "Order Now - 300 MAD",
+                specsTitle: "Product Specifications",
+                materialLabel: "Material",
+                materialValue: "Premium Polyester Blend",
+                featuresLabel: "Features",
+                featuresValue: "Waterproof & Windproof",
+                careLabel: "Care",
+                careValue: "Machine Washable",
+                warrantyLabel: "Warranty",
+                warrantyValue: "1 Year Limited",
+                clickToZoom: "Click to zoom"
+            },
+            fr: {
+                productTitle: "Veste d'Hiver Premium",
+                urgencyText: "Dépêchez-vous! Il ne reste que 11 pièces en stock!",
+                viewersText: "6 personnes regardent ceci en ce moment",
+                productDescription: "Restez au chaud et élégant cet hiver avec notre veste isolée premium. Conçue pour le confort et la durabilité, parfaite pour les activités décontractées et de plein air. Fait pour bouger libre avec l'esprit de l'albatros.",
+                sizeLabel: "Taille",
+                colorLabel: "Couleur",
+                bundleTitle: "🎁 Offres Spéciales 🎁",
+                bundle1: "Achetez 1 pour 300 MAD + Livraison Gratuite",
+                bundle2: "Achetez 2 pour 550 MAD + Livraison Gratuite 🎁",
+                bundle3: "Achetez 3 pour 800 MAD + Livraison Gratuite 🎁",
+                save50: "Économisez 50 MAD",
+                save100: "Économisez 100 MAD",
+                orderTitle: "Complétez Votre Commande",
+                nameLabel: "Nom Complet",
+                phoneLabel: "Numéro de Téléphone",
+                cityLabel: "Ville",
+                addressLabel: "Adresse",
+                orderButton: "Commander Maintenant - 300 MAD",
+                specsTitle: "Spécifications du Produit",
+                materialLabel: "Matériau",
+                materialValue: "Mélange de Polyester Premium",
+                featuresLabel: "Caractéristiques",
+                featuresValue: "Imperméable et Coupe-vent",
+                careLabel: "Entretien",
+                careValue: "Lavable en Machine",
+                warrantyLabel: "Garantie",
+                warrantyValue: "1 An Limitée",
+                clickToZoom: "Cliquez pour zoomer"
+            },
+            ar: {
+                productTitle: "سترة شتوية فاخرة",
+                urgencyText: "أسرع! لم يتبق سوى 11 قطعة في المخزون!",
+                viewersText: "6 أشخاص يشاهدون هذا الآن",
+                productDescription: "ابق دافئًا وأنيقًا هذا الشتاء مع سترتنا المعزولة الفاخرة. مصممة للراحة والمتانة، مثالية للأنشطة العادية والخارجية. صُنعت للحركة الحرة بروح طائر القطرس.",
+                sizeLabel: "المقاس",
+                colorLabel: "اللون",
+                bundleTitle: "🎁 عروض خاصة 🎁",
+                bundle1: "اشتر 1 بـ 300 درهم + شحن مجاني",
+                bundle2: "اشتر 2 بـ 550 درهم + شحن مجاني 🎁",
+                bundle3: "اشتر 3 بـ 800 درهم + شحن مجاني 🎁",
+                save50: "وفر 50 درهم",
+                save100: "وفر 100 درهم",
+                orderTitle: "أكمل طلبك",
+                nameLabel: "الاسم الكامل",
+                phoneLabel: "رقم الهاتف",
+                cityLabel: "المدينة",
+                addressLabel: "العنوان",
+                orderButton: "اطلب الآن - 300 درهم",
+                specsTitle: "مواصفات المنتج",
+                materialLabel: "المادة",
+                materialValue: "خليط البوليستر الفاخر",
+                featuresLabel: "الميزات",
+                featuresValue: "مقاوم للماء والرياح",
+                careLabel: "العناية",
+                careValue: "قابل للغسل في الغسالة",
+                warrantyLabel: "الضمان",
+                warrantyValue: "سنة واحدة محدودة",
+                clickToZoom: "انقر للتكبير"
+            }
+        };
+
+        // Language functions
+        function toggleLanguageMenu() {
+            const menu = document.getElementById('languageMenu');
+            menu.classList.toggle('active');
+        }
+
+        function changeLanguage(lang) {
+            const currentLangSpan = document.getElementById('currentLang');
+            const menu = document.getElementById('languageMenu');
+            
+            currentLangSpan.textContent = lang.toUpperCase();
+            menu.classList.remove('active');
+            
+            // Update HTML attributes
+            document.documentElement.lang = lang;
+            if (lang === 'ar') {
+                document.documentElement.dir = 'rtl';
+            } else {
+                document.documentElement.dir = 'ltr';
+            }
+            
+            // Update content
+            const translation = translations[lang];
+            if (translation) {
+                document.querySelectorAll('[data-translate]').forEach(element => {
+                    const key = element.getAttribute('data-translate');
+                    if (translation[key]) {
+                        element.textContent = translation[key];
+                    }
+                });
+                updateOrderButton();
+            }
+            
+            localStorage.setItem('selectedLanguage', lang);
+        }
+
+        // Product functions
+        function changeMainImage(thumbnail, index) {
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            thumbnail.classList.add('active');
+            
+            const mainImage = document.getElementById('mainImage');
+            const imageData = productImages[index];
+            mainImage.src = thumbnail.getAttribute('data-src');
+            mainImage.alt = imageData.alt;
+            
+            currentImageIndex = index;
+            document.querySelector('.main-image-container').setAttribute('onclick', `openZoom(${index})`);
+        }
+
+        function selectSize(sizeElement) {
+            document.querySelectorAll('.size-option').forEach(size => {
+                size.classList.remove('active');
+            });
+            sizeElement.classList.add('active');
+        }
+
+        function selectColor(colorElement) {
+            document.querySelectorAll('.color-option').forEach(color => {
+                color.classList.remove('active');
+            });
+            colorElement.classList.add('active');
+        }
+
+        function selectBundle(bundleElement) {
+            document.querySelectorAll('.bundle-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            bundleElement.classList.add('active');
+
+            selectedBundle.price = parseInt(bundleElement.dataset.price);
+            selectedBundle.quantity = parseInt(bundleElement.dataset.quantity);
+
+            updateOrderButton();
+        }
+
+        function updateOrderButton() {
+            const orderBtn = document.getElementById('orderBtn');
+            const currentLang = document.documentElement.lang || 'en';
+            
+            let buttonText = `Order Now - ${selectedBundle.price} MAD`;
+            if (currentLang === 'fr') {
+                buttonText = `Commander Maintenant - ${selectedBundle.price} MAD`;
+            } else if (currentLang === 'ar') {
+                buttonText = `اطلب الآن - ${selectedBundle.price} درهم`;
+            }
+            
+            orderBtn.querySelector('span').textContent = buttonText;
+        }
+
+        // Zoom functions
+        function openZoom(index) {
+            currentImageIndex = index;
+            const modal = document.getElementById('zoomModal');
+            const zoomImage = document.getElementById('zoomImage');
+            const counter = document.getElementById('zoomCounter');
+            
+            const imageData = productImages[currentImageIndex];
+            zoomImage.src = imageData.src;
+            zoomImage.alt = imageData.alt;
+            counter.textContent = `${currentImageIndex + 1} / ${productImages.length}`;
+            
+            // Reset zoom
+            zoomLevel = 1;
+            translateX = 0;
+            translateY = 0;
+            updateZoomTransform();
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeZoom(event) {
+            if (event && event.target.classList.contains('zoom-image')) {
+                return;
+            }
+            
+            const modal = document.getElementById('zoomModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function zoomIn() {
+            zoomLevel = Math.min(3, zoomLevel + 0.3);
+            updateZoomTransform();
+        }
+
+        function zoomOut() {
+            zoomLevel = Math.max(0.5, zoomLevel - 0.3);
+            if (zoomLevel <= 1) {
+                translateX = 0;
+                translateY = 0;
+            }
+            updateZoomTransform();
+        }
+
+        function prevZoomImage() {
+            currentImageIndex = currentImageIndex > 0 ? currentImageIndex - 1 : productImages.length - 1;
+            updateZoomImage();
+        }
+
+        function nextZoomImage() {
+            currentImageIndex = currentImageIndex < productImages.length - 1 ? currentImageIndex + 1 : 0;
+            updateZoomImage();
+        }
+
+        function updateZoomImage() {
+            const zoomImage = document.getElementById('zoomImage');
+            const counter = document.getElementById('zoomCounter');
+            const imageData = productImages[currentImageIndex];
+            
+            zoomImage.src = imageData.src;
+            zoomImage.alt = imageData.alt;
+            counter.textContent = `${currentImageIndex + 1} / ${productImages.length}`;
+            
+            // Reset zoom
+            zoomLevel = 1;
+            translateX = 0;
+            translateY = 0;
+            updateZoomTransform();
+        }
+
+        function updateZoomTransform() {
+            const zoomImage = document.getElementById('zoomImage');
+            zoomImage.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
+            
+            if (zoomLevel > 1) {
+                zoomImage.classList.add('zoomed');
+            } else {
+                zoomImage.classList.remove('zoomed');
+            }
+        }
+
+        // Form submission
+        function submitOrder() {
+            const form = document.getElementById('orderForm');
+            const inputs = form.querySelectorAll('input[required]');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = '#ef4444';
+                } else {
+                    input.style.borderColor = '';
+                }
+            });
+
+            if (isValid) {
+                alert('Order submitted successfully!');
+                inputs.forEach(input => (input.value = ''));
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load saved language
+            const savedLang = localStorage.getItem('selectedLanguage');
+            if (savedLang && translations[savedLang]) {
+                changeLanguage(savedLang);
+            }
+
+            // Close language menu when clicking outside
+            document.addEventListener('click', function(e) {
+                const languageDropdown = document.querySelector('.language-dropdown');
+                if (!languageDropdown.contains(e.target)) {
+                    document.getElementById('languageMenu').classList.remove('active');
+                }
+            });
+
+            // Zoom modal event listeners
+            const zoomModal = document.getElementById('zoomModal');
+            const zoomImage = document.getElementById('zoomImage');
+
+            // Mouse wheel zoom
+            zoomModal.addEventListener('wheel', function(e) {
+                e.preventDefault();
+                const delta = e.deltaY > 0 ? -0.2 : 0.2;
+                zoomLevel = Math.max(0.5, Math.min(3, zoomLevel + delta));
+                updateZoomTransform();
+            });
+
+            // Drag functionality
+            zoomImage.addEventListener('mousedown', function(e) {
+                if (zoomLevel > 1) {
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    e.preventDefault();
+                }
+            });
+
+            document.addEventListener('mousemove', function(e) {
+                if (isDragging && zoomLevel > 1) {
+                    translateX = e.clientX - startX;
+                    translateY = e.clientY - startY;
+                    updateZoomTransform();
+                }
+            });
+
+            document.addEventListener('mouseup', function() {
+                isDragging = false;
+            });
+
+            // Touch support for mobile
+            let touchStartX = 0;
+            let touchStartY = 0;
+
+            zoomImage.addEventListener('touchstart', function(e) {
+                if (zoomLevel > 1) {
+                    isDragging = true;
+                    const touch = e.touches[0];
+                    touchStartX = touch.clientX - translateX;
+                    touchStartY = touch.clientY - translateY;
+                    e.preventDefault();
+                }
+            });
+
+            zoomImage.addEventListener('touchmove', function(e) {
+                if (isDragging && zoomLevel > 1) {
+                    const touch = e.touches[0];
+                    translateX = touch.clientX - touchStartX;
+                    translateY = touch.clientY - touchStartY;
+                    updateZoomTransform();
+                    e.preventDefault();
+                }
+            });
+
+            zoomImage.addEventListener('touchend', function() {
+                isDragging = false;
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                const modal = document.getElementById('zoomModal');
+                if (modal.classList.contains('active')) {
+                    switch(e.key) {
+                        case 'Escape':
+                            closeZoom();
+                            break;
+                        case 'ArrowLeft':
+                            prevZoomImage();
+                            break;
+                        case 'ArrowRight':
+                            nextZoomImage();
+                            break;
+                        case '+':
+                        case '=':
+                            zoomIn();
+                            break;
+                        case '-':
+                            zoomOut();
+                            break;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
