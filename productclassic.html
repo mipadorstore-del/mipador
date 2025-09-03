@@ -9,6 +9,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="productdetails.css">
+    <style>
+        .thank-you-message {
+            display: none;
+            background-color: #28a745;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .thank-you-message.show {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -133,34 +149,29 @@
                 </div>
 
                 <!-- Order Form -->
-                <div class="order-form">
-                    <h5 class="form-title" data-translate="orderTitle">Complete Your Order</h5>
-                    <div id="orderForm">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label" data-translate="nameLabel">Full Name</label>
-                                <input type="text" class="form-input" id="fullName" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" data-translate="phoneLabel">Phone Number</label>
-                                <input type="tel" class="form-input" id="phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" data-translate="cityLabel">City</label>
-                                <input type="text" class="form-input" id="city" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" data-translate="addressLabel">Address</label>
-                                <input type="text" class="form-input" id="address" required>
-                            </div>
+                <form id="orderForm" class="order-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" data-translate="nameLabel">Full Name</label>
+                            <input type="text" class="form-input" id="fullName" required>
                         </div>
-
-                        <button type="button" class="order-btn" id="orderBtn" onclick="submitOrder()">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span data-translate="orderButton">Order Now - 350 MAD</span>
-                        </button>
+                        <div class="form-group">
+                            <label class="form-label" data-translate="phoneLabel">Phone Number</label>
+                            <input type="tel" class="form-input" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-translate="cityLabel">City</label>
+                            <input type="text" class="form-input" id="city" required>
+                        </div>
                     </div>
-                </div>
+                    <button type="submit" class="order-btn" id="orderBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span data-translate="orderButton">Order Now - 350 MAD</span>
+                    </button>
+                    <div class="thank-you-message" id="thankYouMessage" data-translate="thankYouMessage">
+                        Thank you for your order! We'll contact you soon to confirm.
+                    </div>
+                </form>
 
                 <!-- Specifications -->
                 <div class="specs-section">
@@ -196,7 +207,13 @@
             <img class="zoom-image" id="zoomImage" alt="Zoomed product image">
             <div class="zoom-controls">
                 <button class="zoom-btn" onclick="zoomIn()" title="Zoom In">
-                    <i class="fas fa-close"></i>
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="zoom-btn" onclick="zoomOut()" title="Zoom Out">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="zoom-btn" onclick="closeZoom()" title="Close">
+                    <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="zoom-counter" id="zoomCounter">1 / 3</div>
@@ -227,6 +244,10 @@
         let startX = 0;
         let startY = 0;
         let selectedBundle = { price: 350, quantity: 1 };
+        let selectedSize = 'L';
+
+        // Your Google Apps Script URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzIipteyDYaUeVA1qpamd9J9hCA4KOPkOq-jzyMn6VSmOizU9A50JwXDSEYVJk_bxQ_rg/exec';
 
         // Product images array
         const productImages = [
@@ -235,7 +256,7 @@
             { src: "images/jacker-starter-dark-blue-3.jpg", alt: "Back View" }
         ];
 
-        // Translations (Updated for new product)
+        // Translations (Updated with thank you message)
         const translations = {
             en: {
                 productTitle: "Jacker Starter Dark Blue",
@@ -254,7 +275,6 @@
                 nameLabel: "Full Name",
                 phoneLabel: "Phone Number",
                 cityLabel: "City",
-                addressLabel: "Address",
                 orderButton: "Order Now - 350 MAD",
                 specsTitle: "Product Specifications",
                 materialLabel: "Material",
@@ -265,7 +285,8 @@
                 careValue: "Dry Clean Only",
                 warrantyLabel: "Warranty",
                 warrantyValue: "1 Year Limited",
-                clickToZoom: "Click to zoom"
+                clickToZoom: "Click to zoom",
+                thankYouMessage: "Thank you for your order! We'll contact you soon to confirm."
             },
             fr: {
                 productTitle: "Veste Jacker Starter Bleu Foncé",
@@ -284,7 +305,6 @@
                 nameLabel: "Nom Complet",
                 phoneLabel: "Numéro de Téléphone",
                 cityLabel: "Ville",
-                addressLabel: "Adresse",
                 orderButton: "Commander Maintenant - 350 MAD",
                 specsTitle: "Spécifications du Produit",
                 materialLabel: "Matériau",
@@ -295,7 +315,8 @@
                 careValue: "Nettoyage à Sec Seulement",
                 warrantyLabel: "Garantie",
                 warrantyValue: "1 An Limitée",
-                clickToZoom: "Cliquez pour zoomer"
+                clickToZoom: "Cliquez pour zoomer",
+                thankYouMessage: "Merci pour votre commande ! Nous vous contacterons bientôt pour confirmer."
             },
             ar: {
                 productTitle: "سترة جاكر ستارتر زرقاء داكنة",
@@ -314,7 +335,6 @@
                 nameLabel: "الاسم الكامل",
                 phoneLabel: "رقم الهاتف",
                 cityLabel: "المدينة",
-                addressLabel: "العنوان",
                 orderButton: "اطلب الآن - 350 درهم",
                 specsTitle: "مواصفات المنتج",
                 materialLabel: "المادة",
@@ -325,7 +345,8 @@
                 careValue: "تنظيف جاف فقط",
                 warrantyLabel: "الضمان",
                 warrantyValue: "سنة واحدة محدودة",
-                clickToZoom: "انقر للتكبير"
+                clickToZoom: "انقر للتكبير",
+                thankYouMessage: "شكراً لطلبك! سنتواصل معك قريباً للتأكيد."
             }
         };
 
@@ -386,6 +407,7 @@
                 size.classList.remove('active');
             });
             sizeElement.classList.add('active');
+            selectedSize = sizeElement.innerText;
         }
 
         function selectColor(colorElement) {
@@ -419,6 +441,97 @@
             }
 
             orderBtn.querySelector('span').textContent = buttonText;
+        }
+
+        // Form submission function
+        async function submitOrder(event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const city = document.getElementById('city').value.trim();
+
+            // Validate form
+            if (!fullName || !phone || !city) {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            // Get the current bundle offer text
+            const selectedBundleElement = document.querySelector('.bundle-option.active');
+            const bundleText = selectedBundleElement.querySelector('[data-translate]').textContent;
+
+            // Prepare data for Google Apps Script
+            const orderData = {
+                ProductName: "Jacker Starter Dark Blue",
+                Taille: selectedSize,
+                NomComplet: fullName,
+                PhoneNumber: phone,
+                City: city,
+                Status: "Pending",
+                Offre: bundleText,
+                Note: ""
+            };
+
+            try {
+                // Show loading state
+                const orderBtn = document.getElementById('orderBtn');
+                const originalText = orderBtn.querySelector('span').textContent;
+                orderBtn.disabled = true;
+                orderBtn.querySelector('span').textContent = 'Sending...';
+
+                // Send to Google Apps Script
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(orderData)
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    // Show success message
+                    const thankYouMessage = document.getElementById('thankYouMessage');
+                    thankYouMessage.classList.add('show');
+
+                    // Reset form
+                    document.getElementById('orderForm').reset();
+                    selectedSize = 'L';
+                    
+                    // Reset selectors to default
+                    document.querySelectorAll('.size-option').forEach(size => {
+                        size.classList.remove('active');
+                        if (size.innerText === 'L') size.classList.add('active');
+                    });
+                    
+                    document.querySelectorAll('.bundle-option').forEach(option => {
+                        option.classList.remove('active');
+                        if (option.dataset.quantity === '1') option.classList.add('active');
+                    });
+                    
+                    selectedBundle = { price: 350, quantity: 1 };
+                    updateOrderButton();
+
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        thankYouMessage.classList.remove('show');
+                    }, 5000);
+
+                } else {
+                    alert('Error submitting order: ' + result.message);
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error submitting order. Please try again.');
+            } finally {
+                // Reset button
+                const orderBtn = document.getElementById('orderBtn');
+                orderBtn.disabled = false;
+                updateOrderButton();
+            }
         }
 
         // Zoom functions
@@ -504,29 +617,6 @@
             }
         }
 
-        // Form submission
-        function submitOrder() {
-            const form = document.getElementById('orderForm');
-            const inputs = form.querySelectorAll('input[required]');
-            let isValid = true;
-
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                    input.style.borderColor = '#ef4444';
-                } else {
-                    input.style.borderColor = '';
-                }
-            });
-
-            if (isValid) {
-                alert('Order submitted successfully!');
-                inputs.forEach(input => (input.value = ''));
-            } else {
-                alert('Please fill in all required fields.');
-            }
-        }
-
         // Event listeners
         document.addEventListener('DOMContentLoaded', function () {
             // Load saved language
@@ -534,6 +624,9 @@
             if (savedLang && translations[savedLang]) {
                 changeLanguage(savedLang);
             }
+
+            // Form submission
+            document.getElementById('orderForm').addEventListener('submit', submitOrder);
 
             // Close language menu when clicking outside
             document.addEventListener('click', function (e) {
