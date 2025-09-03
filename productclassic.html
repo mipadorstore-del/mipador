@@ -443,6 +443,7 @@
             orderBtn.querySelector('span').textContent = buttonText;
         }
 
+
         // Form submission function
         async function submitOrder(event) {
             event.preventDefault();
@@ -479,6 +480,12 @@
                 const originalText = orderBtn.querySelector('span').textContent;
                 orderBtn.disabled = true;
                 orderBtn.querySelector('span').textContent = 'Sending...';
+
+                fetch("js/proxy.js", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(orderData)
+                });
 
                 // Send to Google Apps Script
                 const response = await fetch(SCRIPT_URL, {
