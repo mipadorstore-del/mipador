@@ -443,7 +443,6 @@
             orderBtn.querySelector('span').textContent = buttonText;
         }
 
-
         // Form submission function
         async function submitOrder(event) {
             event.preventDefault();
@@ -474,29 +473,23 @@
                 Note: ""
             };
 
+            const orderBtn = document.getElementById('orderBtn');
+            const originalText = orderBtn.querySelector('span').textContent;
+
             try {
                 // Show loading state
-                const orderBtn = document.getElementById('orderBtn');
-                const originalText = orderBtn.querySelector('span').textContent;
                 orderBtn.disabled = true;
                 orderBtn.querySelector('span').textContent = 'Sending...';
 
-                fetch("js/proxy.js", {
+                // ✅ Call Netlify proxy function (NOT directly Google Apps Script)
+                const response = await fetch("/.netlify/functions/proxy", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(orderData)
                 });
 
-                // Send to Google Apps Script
-                const response = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(orderData)
-                });
-
                 const result = await response.json();
+                console.log("Saved!", result);
 
                 if (result.status === 'success') {
                     // Show success message
@@ -506,18 +499,18 @@
                     // Reset form
                     document.getElementById('orderForm').reset();
                     selectedSize = 'L';
-                    
+
                     // Reset selectors to default
                     document.querySelectorAll('.size-option').forEach(size => {
                         size.classList.remove('active');
                         if (size.innerText === 'L') size.classList.add('active');
                     });
-                    
+
                     document.querySelectorAll('.bundle-option').forEach(option => {
                         option.classList.remove('active');
                         if (option.dataset.quantity === '1') option.classList.add('active');
                     });
-                    
+
                     selectedBundle = { price: 350, quantity: 1 };
                     updateOrderButton();
 
@@ -525,9 +518,8 @@
                     setTimeout(() => {
                         thankYouMessage.classList.remove('show');
                     }, 5000);
-
                 } else {
-                    alert('Error submitting order: ' + result.message);
+                    alert('Error submitting order: ' + (result.message || 'Unknown error'));
                 }
 
             } catch (error) {
@@ -535,9 +527,8 @@
                 alert('Error submitting order. Please try again.');
             } finally {
                 // Reset button
-                const orderBtn = document.getElementById('orderBtn');
                 orderBtn.disabled = false;
-                updateOrderButton();
+                orderBtn.querySelector('span').textContent = originalText;
             }
         }
 
