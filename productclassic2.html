@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Winter Jacket - Mipador</title>
-    
-  <link rel="icon" type="image/png" href="images/favicon.png">
-    <!-- Google Fonts -->
+    <title>Jacker Starter Green - Mipador</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <link rel="stylesheet" href="productdetails.css">
+    <link rel="stylesheet" href="productdetails2.css">
 </head>
+
 <body>
     <!-- Language Selector -->
     <div class="language-selector">
@@ -37,56 +34,59 @@
             <!-- Product Gallery -->
             <div class="product-gallery">
                 <div class="main-image-container" onclick="openZoom(0)">
-                    <img class="main-image" id="mainImage" src="images/p2classic1.jpg" alt="Premium Winter Jacket">
+                    <img class="main-image" id="mainImage" src="images/jacker-starter-green-1.jpg"
+                        alt="Jacker Starter Green">
                     <div class="zoom-hint">
                         <i class="fas fa-search-plus"></i>
                         <span data-translate="clickToZoom">Click to zoom</span>
                     </div>
                 </div>
-                
+
                 <div class="thumbnail-gallery" id="thumbnailGallery">
-                    <div class="thumbnail active" onclick="changeMainImage(this, 0)" data-src="images/p2classic1.jpg">
-                        <img src="images/p2classic1.jpg" alt="Front View">
+                    <div class="thumbnail active" onclick="changeMainImage(this, 0)"
+                        data-src="images/jacker-starter-green-1.jpg">
+                        <img src="images/jacker-starter-green-1.jpg" alt="Front View">
                     </div>
-                    <div class="thumbnail" onclick="changeMainImage(this, 1)" data-src="images/p2classic2.jpg">
-                        <img src="images/p2classic2.jpg" alt="Side View">
+                    <div class="thumbnail" onclick="changeMainImage(this, 1)"
+                        data-src="images/jacker-starter-green-2.jpg">
+                        <img src="images/jacker-starter-green-2.jpg" alt="Side View">
                     </div>
-                    <div class="thumbnail" onclick="changeMainImage(this, 2)" data-src="images/p2classic3.jpg">
-                        <img src="images/p2classic3.jpg" alt="Back View">
+                    <div class="thumbnail" onclick="changeMainImage(this, 2)"
+                        data-src="images/jacker-starter-green-3.jpg">
+                        <img src="images/jacker-starter-green-3.jpg" alt="Back View">
                     </div>
                 </div>
             </div>
 
             <!-- Product Details -->
             <div class="product-details">
-                <h1 class="product-title" data-translate="productTitle">Premium Winter Jacket</h1>
-                <div class="product-price">300 MAD</div>
+                <h1 class="product-title" data-translate="productTitle">Jacker Starter Green</h1>
+                <div class="product-price">360 MAD</div>
 
                 <div class="urgency-banner">
                     <i class="fas fa-fire"></i>
-                    <span data-translate="urgencyText">Hurry! Only 11 pieces left in stock!</span>
+                    <span data-translate="urgencyText">Hurry! Only 12 pieces left in stock!</span>
                 </div>
 
                 <div class="viewers-count">
                     <i class="fas fa-eye"></i>
-                    <span data-translate="viewersText">6 people are viewing this right now</span>
+                    <span data-translate="viewersText">7 people are viewing this right now</span>
                 </div>
 
                 <p class="product-description" data-translate="productDescription">
-                    Stay warm and stylish this winter with our premium insulated jacket. 
-                    Designed for comfort and durability, perfect for both casual and outdoor activities. 
-                    Made to move free with the spirit of the albatross.
+                    Step into the game with our Jacker Starter Green jacket. Featuring a bold billiard-themed back
+                    design, this jacket blends style and comfort, ideal for casual outings and pool hall vibes.
                 </p>
 
                 <!-- Size Selector -->
                 <div class="selector-section">
                     <h5 class="selector-title" data-translate="sizeLabel">Size</h5>
                     <div class="size-selector">
+                        <div class="size-option" onclick="selectSize(this)">S</div>
                         <div class="size-option" onclick="selectSize(this)">M</div>
                         <div class="size-option active" onclick="selectSize(this)">L</div>
                         <div class="size-option" onclick="selectSize(this)">XL</div>
                         <div class="size-option" onclick="selectSize(this)">XXL</div>
-                        <div class="size-option" onclick="selectSize(this)">3XL</div>
                     </div>
                 </div>
 
@@ -94,40 +94,38 @@
                 <div class="selector-section">
                     <h5 class="selector-title" data-translate="colorLabel">Color</h5>
                     <div class="color-selector">
-                        <!-- <div class="color-option color-black active" onclick="selectColor(this)" data-color="black" title="Midnight Black"></div> -->
-                        <div class="color-option color-green" onclick="selectColor(this)" data-color="green" title="Forest Green"></div>
-                        <!-- <div class="color-option color-gray" onclick="selectColor(this)" data-color="gray" title="Storm Gray"></div> -->
-                        <!-- <div class="color-option color-beige" onclick="selectColor(this)" data-color="beige" title="Desert Beige"></div> -->
+                        <div class="color-option color-dark-green active" onclick="selectColor(this)" data-color="green"
+                            title="Forest Green"></div>
                     </div>
                 </div>
 
                 <!-- Bundle Offers -->
                 <div class="bundle-offers">
                     <h5 class="bundle-title" data-translate="bundleTitle">🎁 Special Offers 🎁</h5>
-                    
-                    <div class="bundle-option active" onclick="selectBundle(this)" data-price="300" data-quantity="1">
+
+                    <div class="bundle-option active" onclick="selectBundle(this)" data-price="360" data-quantity="1">
                         <div class="bundle-content">
-                            <span data-translate="bundle1">Buy 1 for 300 MAD + Free Shipping</span>
-                            <span class="bundle-price">300 MAD</span>
+                            <span data-translate="bundle1">Buy 1 for 360 MAD + Free Shipping</span>
+                            <span class="bundle-price">360 MAD</span>
                         </div>
                     </div>
-                    
-                    <div class="bundle-option" onclick="selectBundle(this)" data-price="550" data-quantity="2">
+
+                    <div class="bundle-option" onclick="selectBundle(this)" data-price="660" data-quantity="2">
                         <div class="bundle-content">
-                            <span data-translate="bundle2">Buy 2 for 550 MAD + Free Shipping 🎁</span>
+                            <span data-translate="bundle2">Buy 2 for 660 MAD + Free Shipping 🎁</span>
                             <div>
-                                <span class="bundle-price">550 MAD</span>
-                                <span class="bundle-savings" data-translate="save50">Save 50 MAD</span>
+                                <span class="bundle-price">660 MAD</span>
+                                <span class="bundle-savings" data-translate="save60">Save 60 MAD</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="bundle-option" onclick="selectBundle(this)" data-price="800" data-quantity="3">
+
+                    <div class="bundle-option" onclick="selectBundle(this)" data-price="960" data-quantity="3">
                         <div class="bundle-content">
-                            <span data-translate="bundle3">Buy 3 for 800 MAD + Free Shipping 🎁</span>
+                            <span data-translate="bundle3">Buy 3 for 960 MAD + Free Shipping 🎁</span>
                             <div>
-                                <span class="bundle-price">800 MAD</span>
-                                <span class="bundle-savings" data-translate="save100">Save 100 MAD</span>
+                                <span class="bundle-price">960 MAD</span>
+                                <span class="bundle-savings" data-translate="save120">Save 120 MAD</span>
                             </div>
                         </div>
                     </div>
@@ -158,7 +156,7 @@
 
                         <button type="button" class="order-btn" id="orderBtn" onclick="submitOrder()">
                             <i class="fas fa-shopping-cart"></i>
-                            <span data-translate="orderButton">Order Now - 300 MAD</span>
+                            <span data-translate="orderButton">Order Now - 360 MAD</span>
                         </button>
                     </div>
                 </div>
@@ -169,15 +167,17 @@
                     <ul class="specs-list">
                         <li class="specs-item">
                             <span class="spec-label" data-translate="materialLabel">Material</span>
-                            <span class="spec-value" data-translate="materialValue">Premium Polyester Blend</span>
+                            <span class="spec-value" data-translate="materialValue">Wool Blend with Leather
+                                Sleeves</span>
                         </li>
                         <li class="specs-item">
                             <span class="spec-label" data-translate="featuresLabel">Features</span>
-                            <span class="spec-value" data-translate="featuresValue">Waterproof & Windproof</span>
+                            <span class="spec-value" data-translate="featuresValue">Billiard-Themed Back,
+                                Lightweight</span>
                         </li>
                         <li class="specs-item">
                             <span class="spec-label" data-translate="careLabel">Care</span>
-                            <span class="spec-value" data-translate="careValue">Machine Washable</span>
+                            <span class="spec-value" data-translate="careValue">Dry Clean Only</span>
                         </li>
                         <li class="specs-item">
                             <span class="spec-label" data-translate="warrantyLabel">Warranty</span>
@@ -198,14 +198,13 @@
                     <i class="fas fa-close"></i>
                 </button>
             </div>
-            <div class="zoom-counter" id="zoomCounter">1 / 6</div>
+            <div class="zoom-counter" id="zoomCounter">1 / 3</div>
         </div>
     </div>
 
     <!-- Footer Section -->
     <footer class="footer">
         <div class="container">
-
             <div class="d-flex justify-content-center" data-aos="fade-right" data-aos-duration="1000">
                 <img src="images/logofooter.png" alt="Mipador Logo" class="footer-logo img-fluid" />
             </div>
@@ -226,112 +225,103 @@
         let isDragging = false;
         let startX = 0;
         let startY = 0;
-        let selectedBundle = { price: 300, quantity: 1 };
+        let selectedBundle = { price: 360, quantity: 1 };
 
         // Product images array
         const productImages = [
-            {
-                src: "images/p2classic1.jpg",
-                alt: "Front View"
-            },
-            {
-                src: "images/p2classic2.jpg",
-                alt: "Side View"
-            },
-            {
-                src: "images/p2classic3.jpg",
-                alt: "Back View"
-            }
+            { src: "images/jacker-starter-green-1.jpg", alt: "Front View" },
+            { src: "images/jacker-starter-green-2.jpg", alt: "Side View" },
+            { src: "images/jacker-starter-green-3.jpg", alt: "Back View" }
         ];
 
-        // Translations
+        // Translations (Updated for new product)
         const translations = {
             en: {
-                productTitle: "Premium Winter Jacket",
-                urgencyText: "Hurry! Only 11 pieces left in stock!",
-                viewersText: "6 people are viewing this right now",
-                productDescription: "Stay warm and stylish this winter with our premium insulated jacket. Designed for comfort and durability, perfect for both casual and outdoor activities. Made to move free with the spirit of the albatross.",
+                productTitle: "Jacker Starter Green",
+                urgencyText: "Hurry! Only 12 pieces left in stock!",
+                viewersText: "7 people are viewing this right now",
+                productDescription: "Step into the game with our Jacker Starter Green jacket. Featuring a bold billiard-themed back design, this jacket blends style and comfort, ideal for casual outings and pool hall vibes.",
                 sizeLabel: "Size",
                 colorLabel: "Color",
                 bundleTitle: "🎁 Special Offers 🎁",
-                bundle1: "Buy 1 for 300 MAD + Free Shipping",
-                bundle2: "Buy 2 for 550 MAD + Free Shipping 🎁",
-                bundle3: "Buy 3 for 800 MAD + Free Shipping 🎁",
-                save50: "Save 50 MAD",
-                save100: "Save 100 MAD",
+                bundle1: "Buy 1 for 360 MAD + Free Shipping",
+                bundle2: "Buy 2 for 660 MAD + Free Shipping 🎁",
+                bundle3: "Buy 3 for 960 MAD + Free Shipping 🎁",
+                save60: "Save 60 MAD",
+                save120: "Save 120 MAD",
                 orderTitle: "Complete Your Order",
                 nameLabel: "Full Name",
                 phoneLabel: "Phone Number",
                 cityLabel: "City",
                 addressLabel: "Address",
-                orderButton: "Order Now - 300 MAD",
+                orderButton: "Order Now - 360 MAD",
                 specsTitle: "Product Specifications",
                 materialLabel: "Material",
-                materialValue: "Premium Polyester Blend",
+                materialValue: "Wool Blend with Leather Sleeves",
                 featuresLabel: "Features",
-                featuresValue: "Waterproof & Windproof",
+                featuresValue: "Billiard-Themed Back, Lightweight",
                 careLabel: "Care",
-                careValue: "Machine Washable",
+                careValue: "Dry Clean Only",
                 warrantyLabel: "Warranty",
                 warrantyValue: "1 Year Limited",
                 clickToZoom: "Click to zoom"
             },
             fr: {
-                productTitle: "Veste d'Hiver Premium",
-                urgencyText: "Dépêchez-vous! Il ne reste que 11 pièces en stock!",
-                viewersText: "6 personnes regardent ceci en ce moment",
-                productDescription: "Restez au chaud et élégant cet hiver avec notre veste isolée premium. Conçue pour le confort et la durabilité, parfaite pour les activités décontractées et de plein air. Fait pour bouger libre avec l'esprit de l'albatros.",
+                productTitle: "Veste Jacker Starter Verte",
+                urgencyText: "Dépêchez-vous! Il ne reste que 12 pièces en stock!",
+                viewersText: "7 personnes regardent ceci en ce moment",
+                productDescription: "Entrez dans le jeu avec notre veste Jacker Starter Verte. Dotée d'un design audacieux à thème de billard au dos, cette veste allie style et confort, idéale pour les sorties décontractées et l'ambiance des salles de billard.",
                 sizeLabel: "Taille",
                 colorLabel: "Couleur",
                 bundleTitle: "🎁 Offres Spéciales 🎁",
-                bundle1: "Achetez 1 pour 300 MAD + Livraison Gratuite",
-                bundle2: "Achetez 2 pour 550 MAD + Livraison Gratuite 🎁",
-                bundle3: "Achetez 3 pour 800 MAD + Livraison Gratuite 🎁",
-                save50: "Économisez 50 MAD",
-                save100: "Économisez 100 MAD",
+                bundle1: "Achetez 1 pour 360 MAD + Livraison Gratuite",
+                bundle2: "Achetez 2 pour 660 MAD + Livraison Gratuite 🎁",
+                bundle3: "Achetez 3 pour 960 MAD + Livraison Gratuite 🎁",
+                save60: "Économisez 60 MAD",
+                save120: "Économisez 120 MAD",
                 orderTitle: "Complétez Votre Commande",
                 nameLabel: "Nom Complet",
                 phoneLabel: "Numéro de Téléphone",
                 cityLabel: "Ville",
                 addressLabel: "Adresse",
-                orderButton: "Commander Maintenant - 300 MAD",
+                orderButton: "Commander Maintenant - 360 MAD",
                 specsTitle: "Spécifications du Produit",
                 materialLabel: "Matériau",
-                materialValue: "Mélange de Polyester Premium",
+                materialValue: "Mélange de Laine avec Manches en Cuir",
                 featuresLabel: "Caractéristiques",
-                featuresValue: "Imperméable et Coupe-vent",
+                featuresValue: "Dos à Thème Billard, Léger",
                 careLabel: "Entretien",
-                careValue: "Lavable en Machine",
+                careValue: "Nettoyage à Sec Seulement",
                 warrantyLabel: "Garantie",
                 warrantyValue: "1 An Limitée",
                 clickToZoom: "Cliquez pour zoomer"
             },
             ar: {
-                productTitle: "سترة شتوية فاخرة",
-                urgencyText: "أسرع! لم يتبق سوى 11 قطعة في المخزون!",
-                viewersText: "6 أشخاص يشاهدون هذا الآن",
-                productDescription: "ابق دافئًا وأنيقًا هذا الشتاء مع سترتنا المعزولة الفاخرة. مصممة للراحة والمتانة، مثالية للأنشطة العادية والخارجية. صُنعت للحركة الحرة بروح طائر القطرس.",
+                productTitle: "سترة جاكر ستارتر خضراء",
+                urgencyText: "أسرع! لم يتبق سوى 12 قطعة في المخزون!",
+                viewersText: "7 أشخاص يشاهدون هذا الآن",
+                productDescription: "ادخل في اللعبة مع سترة جاكر ستارتر خضراء. تتميز بتصميم جريء مستوحى من البلياردو على الظهر، هذه السترة تجمع بين الأناقة والراحة، مثالية للخروجات العرضية وأجواء قاعات البلياردو.",
                 sizeLabel: "المقاس",
                 colorLabel: "اللون",
                 bundleTitle: "🎁 عروض خاصة 🎁",
-                bundle1: "اشتر 1 بـ 300 درهم + شحن مجاني",
-                bundle2: "اشتر 2 بـ 550 درهم + شحن مجاني 🎁",
-                bundle3: "اشتر 3 بـ 800 درهم + شحن مجاني 🎁",
-                save50: "وفر 50 درهم",
-                save100: "وفر 100 درهم",
+                bundle1: "اشتر 1 بـ 360 درهم + شحن مجاني",
+                bundle2: "اشتر 2 بـ 660 درهم + شحن مجاني 🎁",
+                bundle3: "اشتر 3 بـ 960 درهم + شحن مجاني 🎁",
+                save60: "وفر 60 درهم",
+                save120: "وفر 120 درهم",
                 orderTitle: "أكمل طلبك",
                 nameLabel: "الاسم الكامل",
                 phoneLabel: "رقم الهاتف",
                 cityLabel: "المدينة",
                 addressLabel: "العنوان",
-                orderButton: "اطلب الآن - 300 درهم",
+                orderButton: "اطلب الآن - 360 درهم",
                 specsTitle: "مواصفات المنتج",
                 materialLabel: "المادة",
-                materialValue: "خليط البوليستر الفاخر",
+                materialValue: "خليط الصوف مع أكمام جلدية",
                 featuresLabel: "الميزات",
-                featuresValue: "مقاوم للماء والرياح",
+                featuresValue: "ظهر مستوحى من البلياردو، خفيف الوزن",
                 careLabel: "العناية",
-                careValue: "قابل للغسل في الغسالة",
+                careValue: "تنظيف جاف فقط",
                 warrantyLabel: "الضمان",
                 warrantyValue: "سنة واحدة محدودة",
                 clickToZoom: "انقر للتكبير"
@@ -347,10 +337,10 @@
         function changeLanguage(lang) {
             const currentLangSpan = document.getElementById('currentLang');
             const menu = document.getElementById('languageMenu');
-            
+
             currentLangSpan.textContent = lang.toUpperCase();
             menu.classList.remove('active');
-            
+
             // Update HTML attributes
             document.documentElement.lang = lang;
             if (lang === 'ar') {
@@ -358,7 +348,7 @@
             } else {
                 document.documentElement.dir = 'ltr';
             }
-            
+
             // Update content
             const translation = translations[lang];
             if (translation) {
@@ -370,7 +360,7 @@
                 });
                 updateOrderButton();
             }
-            
+
             localStorage.setItem('selectedLanguage', lang);
         }
 
@@ -380,12 +370,12 @@
                 thumb.classList.remove('active');
             });
             thumbnail.classList.add('active');
-            
+
             const mainImage = document.getElementById('mainImage');
             const imageData = productImages[index];
             mainImage.src = thumbnail.getAttribute('data-src');
             mainImage.alt = imageData.alt;
-            
+
             currentImageIndex = index;
             document.querySelector('.main-image-container').setAttribute('onclick', `openZoom(${index})`);
         }
@@ -419,14 +409,14 @@
         function updateOrderButton() {
             const orderBtn = document.getElementById('orderBtn');
             const currentLang = document.documentElement.lang || 'en';
-            
+
             let buttonText = `Order Now - ${selectedBundle.price} MAD`;
             if (currentLang === 'fr') {
                 buttonText = `Commander Maintenant - ${selectedBundle.price} MAD`;
             } else if (currentLang === 'ar') {
                 buttonText = `اطلب الآن - ${selectedBundle.price} درهم`;
             }
-            
+
             orderBtn.querySelector('span').textContent = buttonText;
         }
 
@@ -436,18 +426,18 @@
             const modal = document.getElementById('zoomModal');
             const zoomImage = document.getElementById('zoomImage');
             const counter = document.getElementById('zoomCounter');
-            
+
             const imageData = productImages[currentImageIndex];
             zoomImage.src = imageData.src;
             zoomImage.alt = imageData.alt;
             counter.textContent = `${currentImageIndex + 1} / ${productImages.length}`;
-            
+
             // Reset zoom
             zoomLevel = 1;
             translateX = 0;
             translateY = 0;
             updateZoomTransform();
-            
+
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -456,7 +446,7 @@
             if (event && event.target.classList.contains('zoom-image')) {
                 return;
             }
-            
+
             const modal = document.getElementById('zoomModal');
             modal.classList.remove('active');
             document.body.style.overflow = '';
@@ -490,11 +480,11 @@
             const zoomImage = document.getElementById('zoomImage');
             const counter = document.getElementById('zoomCounter');
             const imageData = productImages[currentImageIndex];
-            
+
             zoomImage.src = imageData.src;
             zoomImage.alt = imageData.alt;
             counter.textContent = `${currentImageIndex + 1} / ${productImages.length}`;
-            
+
             // Reset zoom
             zoomLevel = 1;
             translateX = 0;
@@ -505,7 +495,7 @@
         function updateZoomTransform() {
             const zoomImage = document.getElementById('zoomImage');
             zoomImage.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
-            
+
             if (zoomLevel > 1) {
                 zoomImage.classList.add('zoomed');
             } else {
@@ -537,7 +527,7 @@
         }
 
         // Event listeners
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Load saved language
             const savedLang = localStorage.getItem('selectedLanguage');
             if (savedLang && translations[savedLang]) {
@@ -545,7 +535,7 @@
             }
 
             // Close language menu when clicking outside
-            document.addEventListener('click', function(e) {
+            document.addEventListener('click', function (e) {
                 const languageDropdown = document.querySelector('.language-dropdown');
                 if (!languageDropdown.contains(e.target)) {
                     document.getElementById('languageMenu').classList.remove('active');
@@ -557,7 +547,7 @@
             const zoomImage = document.getElementById('zoomImage');
 
             // Mouse wheel zoom
-            zoomModal.addEventListener('wheel', function(e) {
+            zoomModal.addEventListener('wheel', function (e) {
                 e.preventDefault();
                 const delta = e.deltaY > 0 ? -0.2 : 0.2;
                 zoomLevel = Math.max(0.5, Math.min(3, zoomLevel + delta));
@@ -565,7 +555,7 @@
             });
 
             // Drag functionality
-            zoomImage.addEventListener('mousedown', function(e) {
+            zoomImage.addEventListener('mousedown', function (e) {
                 if (zoomLevel > 1) {
                     isDragging = true;
                     startX = e.clientX - translateX;
@@ -574,7 +564,7 @@
                 }
             });
 
-            document.addEventListener('mousemove', function(e) {
+            document.addEventListener('mousemove', function (e) {
                 if (isDragging && zoomLevel > 1) {
                     translateX = e.clientX - startX;
                     translateY = e.clientY - startY;
@@ -582,7 +572,7 @@
                 }
             });
 
-            document.addEventListener('mouseup', function() {
+            document.addEventListener('mouseup', function () {
                 isDragging = false;
             });
 
@@ -590,7 +580,7 @@
             let touchStartX = 0;
             let touchStartY = 0;
 
-            zoomImage.addEventListener('touchstart', function(e) {
+            zoomImage.addEventListener('touchstart', function (e) {
                 if (zoomLevel > 1) {
                     isDragging = true;
                     const touch = e.touches[0];
@@ -600,7 +590,7 @@
                 }
             });
 
-            zoomImage.addEventListener('touchmove', function(e) {
+            zoomImage.addEventListener('touchmove', function (e) {
                 if (isDragging && zoomLevel > 1) {
                     const touch = e.touches[0];
                     translateX = touch.clientX - touchStartX;
@@ -610,15 +600,15 @@
                 }
             });
 
-            zoomImage.addEventListener('touchend', function() {
+            zoomImage.addEventListener('touchend', function () {
                 isDragging = false;
             });
 
             // Keyboard navigation
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function (e) {
                 const modal = document.getElementById('zoomModal');
                 if (modal.classList.contains('active')) {
-                    switch(e.key) {
+                    switch (e.key) {
                         case 'Escape':
                             closeZoom();
                             break;
@@ -641,4 +631,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Winter Jacket - Mipador</title>
-    
-  <link rel="icon" type="image/png" href="images/favicon.png">
-    <!-- Google Fonts -->
+    <title>Jacker Starter Dark Blue - Mipador</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="productdetails.css">
 </head>
+
 <body>
     <!-- Language Selector -->
     <div class="language-selector">
@@ -37,56 +34,60 @@
             <!-- Product Gallery -->
             <div class="product-gallery">
                 <div class="main-image-container" onclick="openZoom(0)">
-                    <img class="main-image" id="mainImage" src="images/pclassic1.jpg" alt="Premium Winter Jacket">
+                    <img class="main-image" id="mainImage" src="images/jacker-starter-dark-blue-1.jpg"
+                        alt="Jacker Starter Dark Blue">
                     <div class="zoom-hint">
                         <i class="fas fa-search-plus"></i>
                         <span data-translate="clickToZoom">Click to zoom</span>
                     </div>
                 </div>
-                
+
                 <div class="thumbnail-gallery" id="thumbnailGallery">
-                    <div class="thumbnail active" onclick="changeMainImage(this, 0)" data-src="images/pclassic1.jpg">
-                        <img src="images/pclassic1.jpg" alt="Front View">
+                    <div class="thumbnail active" onclick="changeMainImage(this, 0)"
+                        data-src="images/jacker-starter-dark-blue-1.jpg">
+                        <img src="images/jacker-starter-dark-blue-1.jpg" alt="Front View">
                     </div>
-                    <div class="thumbnail" onclick="changeMainImage(this, 1)" data-src="images/pclassic2.jpg">
-                        <img src="images/pclassic2.jpg" alt="Side View">
+                    <div class="thumbnail" onclick="changeMainImage(this, 1)"
+                        data-src="images/jacker-starter-dark-blue-2.jpg">
+                        <img src="images/jacker-starter-dark-blue-2.jpg" alt="Side View">
                     </div>
-                    <div class="thumbnail" onclick="changeMainImage(this, 2)" data-src="images/pclassic3.jpg">
-                        <img src="images/pclassic3.jpg" alt="Back View">
+                    <div class="thumbnail" onclick="changeMainImage(this, 2)"
+                        data-src="images/jacker-starter-dark-blue-3.jpg">
+                        <img src="images/jacker-starter-dark-blue-3.jpg" alt="Back View">
                     </div>
                 </div>
             </div>
 
             <!-- Product Details -->
             <div class="product-details">
-                <h1 class="product-title" data-translate="productTitle">Premium Winter Jacket</h1>
-                <div class="product-price">300 MAD</div>
+                <h1 class="product-title" data-translate="productTitle">Jacker Starter Dark Blue</h1>
+                <div class="product-price">350 MAD</div>
 
                 <div class="urgency-banner">
                     <i class="fas fa-fire"></i>
-                    <span data-translate="urgencyText">Hurry! Only 11 pieces left in stock!</span>
+                    <span data-translate="urgencyText">Hurry! Only 15 pieces left in stock!</span>
                 </div>
 
                 <div class="viewers-count">
                     <i class="fas fa-eye"></i>
-                    <span data-translate="viewersText">6 people are viewing this right now</span>
+                    <span data-translate="viewersText">8 people are viewing this right now</span>
                 </div>
 
                 <p class="product-description" data-translate="productDescription">
-                    Stay warm and stylish this winter with our premium insulated jacket. 
-                    Designed for comfort and durability, perfect for both casual and outdoor activities. 
-                    Made to move free with the spirit of the albatross.
+                    Embrace the night sky with our Jacker Starter Dark Blue jacket. Featuring a sleek design with a
+                    moon-inspired logo, this jacket combines style and warmth, perfect for casual wear and stargazing
+                    adventures.
                 </p>
 
                 <!-- Size Selector -->
                 <div class="selector-section">
                     <h5 class="selector-title" data-translate="sizeLabel">Size</h5>
                     <div class="size-selector">
+                        <div class="size-option" onclick="selectSize(this)">S</div>
                         <div class="size-option" onclick="selectSize(this)">M</div>
                         <div class="size-option active" onclick="selectSize(this)">L</div>
                         <div class="size-option" onclick="selectSize(this)">XL</div>
                         <div class="size-option" onclick="selectSize(this)">XXL</div>
-                        <div class="size-option" onclick="selectSize(this)">3XL</div>
                     </div>
                 </div>
 
@@ -94,36 +95,37 @@
                 <div class="selector-section">
                     <h5 class="selector-title" data-translate="colorLabel">Color</h5>
                     <div class="color-selector">
-                        <div class="color-option color-black active" onclick="selectColor(this)" data-color="black" title="Midnight Black"></div>
+                        <div class="color-option color-dark-blue active" onclick="selectColor(this)"
+                            data-color="dark-blue" title="Dark Blue"></div>
                     </div>
                 </div>
 
                 <!-- Bundle Offers -->
                 <div class="bundle-offers">
                     <h5 class="bundle-title" data-translate="bundleTitle">🎁 Special Offers 🎁</h5>
-                    
-                    <div class="bundle-option active" onclick="selectBundle(this)" data-price="300" data-quantity="1">
+
+                    <div class="bundle-option active" onclick="selectBundle(this)" data-price="350" data-quantity="1">
                         <div class="bundle-content">
-                            <span data-translate="bundle1">Buy 1 for 300 MAD + Free Shipping</span>
-                            <span class="bundle-price">300 MAD</span>
+                            <span data-translate="bundle1">Buy 1 for 350 MAD + Free Shipping</span>
+                            <span class="bundle-price">350 MAD</span>
                         </div>
                     </div>
-                    
-                    <div class="bundle-option" onclick="selectBundle(this)" data-price="550" data-quantity="2">
+
+                    <div class="bundle-option" onclick="selectBundle(this)" data-price="650" data-quantity="2">
                         <div class="bundle-content">
-                            <span data-translate="bundle2">Buy 2 for 550 MAD + Free Shipping 🎁</span>
+                            <span data-translate="bundle2">Buy 2 for 650 MAD + Free Shipping 🎁</span>
                             <div>
-                                <span class="bundle-price">550 MAD</span>
+                                <span class="bundle-price">650 MAD</span>
                                 <span class="bundle-savings" data-translate="save50">Save 50 MAD</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="bundle-option" onclick="selectBundle(this)" data-price="800" data-quantity="3">
+
+                    <div class="bundle-option" onclick="selectBundle(this)" data-price="950" data-quantity="3">
                         <div class="bundle-content">
-                            <span data-translate="bundle3">Buy 3 for 800 MAD + Free Shipping 🎁</span>
+                            <span data-translate="bundle3">Buy 3 for 950 MAD + Free Shipping 🎁</span>
                             <div>
-                                <span class="bundle-price">800 MAD</span>
+                                <span class="bundle-price">950 MAD</span>
                                 <span class="bundle-savings" data-translate="save100">Save 100 MAD</span>
                             </div>
                         </div>
@@ -155,7 +157,7 @@
 
                         <button type="button" class="order-btn" id="orderBtn" onclick="submitOrder()">
                             <i class="fas fa-shopping-cart"></i>
-                            <span data-translate="orderButton">Order Now - 300 MAD</span>
+                            <span data-translate="orderButton">Order Now - 350 MAD</span>
                         </button>
                     </div>
                 </div>
@@ -166,15 +168,17 @@
                     <ul class="specs-list">
                         <li class="specs-item">
                             <span class="spec-label" data-translate="materialLabel">Material</span>
-                            <span class="spec-value" data-translate="materialValue">Premium Polyester Blend</span>
+                            <span class="spec-value" data-translate="materialValue">Wool Blend with Leather
+                                Sleeves</span>
                         </li>
                         <li class="specs-item">
                             <span class="spec-label" data-translate="featuresLabel">Features</span>
-                            <span class="spec-value" data-translate="featuresValue">Waterproof & Windproof</span>
+                            <span class="spec-value" data-translate="featuresValue">Moon-Inspired Design,
+                                Lightweight</span>
                         </li>
                         <li class="specs-item">
                             <span class="spec-label" data-translate="careLabel">Care</span>
-                            <span class="spec-value" data-translate="careValue">Machine Washable</span>
+                            <span class="spec-value" data-translate="careValue">Dry Clean Only</span>
                         </li>
                         <li class="specs-item">
                             <span class="spec-label" data-translate="warrantyLabel">Warranty</span>
@@ -195,14 +199,13 @@
                     <i class="fas fa-close"></i>
                 </button>
             </div>
-            <div class="zoom-counter" id="zoomCounter">1 / 6</div>
+            <div class="zoom-counter" id="zoomCounter">1 / 3</div>
         </div>
     </div>
 
     <!-- Footer Section -->
     <footer class="footer">
         <div class="container">
-
             <div class="d-flex justify-content-center" data-aos="fade-right" data-aos-duration="1000">
                 <img src="images/logofooter.png" alt="Mipador Logo" class="footer-logo img-fluid" />
             </div>
@@ -223,37 +226,28 @@
         let isDragging = false;
         let startX = 0;
         let startY = 0;
-        let selectedBundle = { price: 300, quantity: 1 };
+        let selectedBundle = { price: 350, quantity: 1 };
 
         // Product images array
         const productImages = [
-            {
-                src: "images/pclassic1.jpg",
-                alt: "Front View"
-            },
-            {
-                src: "images/pclassic2.jpg",
-                alt: "Side View"
-            },
-            {
-                src: "images/pclassic3.jpg",
-                alt: "Back View"
-            }
+            { src: "images/jacker-starter-dark-blue-1.jpg", alt: "Front View" },
+            { src: "images/jacker-starter-dark-blue-2.jpg", alt: "Side View" },
+            { src: "images/jacker-starter-dark-blue-3.jpg", alt: "Back View" }
         ];
 
-        // Translations
+        // Translations (Updated for new product)
         const translations = {
             en: {
-                productTitle: "Premium Winter Jacket",
-                urgencyText: "Hurry! Only 11 pieces left in stock!",
-                viewersText: "6 people are viewing this right now",
-                productDescription: "Stay warm and stylish this winter with our premium insulated jacket. Designed for comfort and durability, perfect for both casual and outdoor activities. Made to move free with the spirit of the albatross.",
+                productTitle: "Jacker Starter Dark Blue",
+                urgencyText: "Hurry! Only 15 pieces left in stock!",
+                viewersText: "8 people are viewing this right now",
+                productDescription: "Embrace the night sky with our Jacker Starter Dark Blue jacket. Featuring a sleek design with a moon-inspired logo, this jacket combines style and warmth, perfect for casual wear and stargazing adventures.",
                 sizeLabel: "Size",
                 colorLabel: "Color",
                 bundleTitle: "🎁 Special Offers 🎁",
-                bundle1: "Buy 1 for 300 MAD + Free Shipping",
-                bundle2: "Buy 2 for 550 MAD + Free Shipping 🎁",
-                bundle3: "Buy 3 for 800 MAD + Free Shipping 🎁",
+                bundle1: "Buy 1 for 350 MAD + Free Shipping",
+                bundle2: "Buy 2 for 650 MAD + Free Shipping 🎁",
+                bundle3: "Buy 3 for 950 MAD + Free Shipping 🎁",
                 save50: "Save 50 MAD",
                 save100: "Save 100 MAD",
                 orderTitle: "Complete Your Order",
@@ -261,29 +255,29 @@
                 phoneLabel: "Phone Number",
                 cityLabel: "City",
                 addressLabel: "Address",
-                orderButton: "Order Now - 300 MAD",
+                orderButton: "Order Now - 350 MAD",
                 specsTitle: "Product Specifications",
                 materialLabel: "Material",
-                materialValue: "Premium Polyester Blend",
+                materialValue: "Wool Blend with Leather Sleeves",
                 featuresLabel: "Features",
-                featuresValue: "Waterproof & Windproof",
+                featuresValue: "Moon-Inspired Design, Lightweight",
                 careLabel: "Care",
-                careValue: "Machine Washable",
+                careValue: "Dry Clean Only",
                 warrantyLabel: "Warranty",
                 warrantyValue: "1 Year Limited",
                 clickToZoom: "Click to zoom"
             },
             fr: {
-                productTitle: "Veste d'Hiver Premium",
-                urgencyText: "Dépêchez-vous! Il ne reste que 11 pièces en stock!",
-                viewersText: "6 personnes regardent ceci en ce moment",
-                productDescription: "Restez au chaud et élégant cet hiver avec notre veste isolée premium. Conçue pour le confort et la durabilité, parfaite pour les activités décontractées et de plein air. Fait pour bouger libre avec l'esprit de l'albatros.",
+                productTitle: "Veste Jacker Starter Bleu Foncé",
+                urgencyText: "Dépêchez-vous! Il ne reste que 15 pièces en stock!",
+                viewersText: "8 personnes regardent ceci en ce moment",
+                productDescription: "Adoptez le ciel nocturne avec notre veste Jacker Starter Bleu Foncé. Dotée d'un design élégant avec un logo inspiré de la lune, cette veste allie style et chaleur, parfaite pour un usage décontracté et les aventures d'observation des étoiles.",
                 sizeLabel: "Taille",
                 colorLabel: "Couleur",
                 bundleTitle: "🎁 Offres Spéciales 🎁",
-                bundle1: "Achetez 1 pour 300 MAD + Livraison Gratuite",
-                bundle2: "Achetez 2 pour 550 MAD + Livraison Gratuite 🎁",
-                bundle3: "Achetez 3 pour 800 MAD + Livraison Gratuite 🎁",
+                bundle1: "Achetez 1 pour 350 MAD + Livraison Gratuite",
+                bundle2: "Achetez 2 pour 650 MAD + Livraison Gratuite 🎁",
+                bundle3: "Achetez 3 pour 950 MAD + Livraison Gratuite 🎁",
                 save50: "Économisez 50 MAD",
                 save100: "Économisez 100 MAD",
                 orderTitle: "Complétez Votre Commande",
@@ -291,29 +285,29 @@
                 phoneLabel: "Numéro de Téléphone",
                 cityLabel: "Ville",
                 addressLabel: "Adresse",
-                orderButton: "Commander Maintenant - 300 MAD",
+                orderButton: "Commander Maintenant - 350 MAD",
                 specsTitle: "Spécifications du Produit",
                 materialLabel: "Matériau",
-                materialValue: "Mélange de Polyester Premium",
+                materialValue: "Mélange de Laine avec Manches en Cuir",
                 featuresLabel: "Caractéristiques",
-                featuresValue: "Imperméable et Coupe-vent",
+                featuresValue: "Design Inspiré de la Lune, Léger",
                 careLabel: "Entretien",
-                careValue: "Lavable en Machine",
+                careValue: "Nettoyage à Sec Seulement",
                 warrantyLabel: "Garantie",
                 warrantyValue: "1 An Limitée",
                 clickToZoom: "Cliquez pour zoomer"
             },
             ar: {
-                productTitle: "سترة شتوية فاخرة",
-                urgencyText: "أسرع! لم يتبق سوى 11 قطعة في المخزون!",
-                viewersText: "6 أشخاص يشاهدون هذا الآن",
-                productDescription: "ابق دافئًا وأنيقًا هذا الشتاء مع سترتنا المعزولة الفاخرة. مصممة للراحة والمتانة، مثالية للأنشطة العادية والخارجية. صُنعت للحركة الحرة بروح طائر القطرس.",
+                productTitle: "سترة جاكر ستارتر زرقاء داكنة",
+                urgencyText: "أسرع! لم يتبق سوى 15 قطعة في المخزون!",
+                viewersText: "8 أشخاص يشاهدون هذا الآن",
+                productDescription: "استمتع بالسماء الليلية مع سترة جاكر ستارتر زرقاء داكنة. تتميز بتصميم أنيق مع شعار مستوحى من القمر، هذه السترة تجمع بين الأناقة والدفء، مثالية للاستخدام العرضي ومغامرات رؤية النجوم.",
                 sizeLabel: "المقاس",
                 colorLabel: "اللون",
                 bundleTitle: "🎁 عروض خاصة 🎁",
-                bundle1: "اشتر 1 بـ 300 درهم + شحن مجاني",
-                bundle2: "اشتر 2 بـ 550 درهم + شحن مجاني 🎁",
-                bundle3: "اشتر 3 بـ 800 درهم + شحن مجاني 🎁",
+                bundle1: "اشتر 1 بـ 350 درهم + شحن مجاني",
+                bundle2: "اشتر 2 بـ 650 درهم + شحن مجاني 🎁",
+                bundle3: "اشتر 3 بـ 950 درهم + شحن مجاني 🎁",
                 save50: "وفر 50 درهم",
                 save100: "وفر 100 درهم",
                 orderTitle: "أكمل طلبك",
@@ -321,14 +315,14 @@
                 phoneLabel: "رقم الهاتف",
                 cityLabel: "المدينة",
                 addressLabel: "العنوان",
-                orderButton: "اطلب الآن - 300 درهم",
+                orderButton: "اطلب الآن - 350 درهم",
                 specsTitle: "مواصفات المنتج",
                 materialLabel: "المادة",
-                materialValue: "خليط البوليستر الفاخر",
+                materialValue: "خليط الصوف مع أكمام جلدية",
                 featuresLabel: "الميزات",
-                featuresValue: "مقاوم للماء والرياح",
+                featuresValue: "تصميم مستوحى من القمر، خفيف الوزن",
                 careLabel: "العناية",
-                careValue: "قابل للغسل في الغسالة",
+                careValue: "تنظيف جاف فقط",
                 warrantyLabel: "الضمان",
                 warrantyValue: "سنة واحدة محدودة",
                 clickToZoom: "انقر للتكبير"
@@ -344,10 +338,10 @@
         function changeLanguage(lang) {
             const currentLangSpan = document.getElementById('currentLang');
             const menu = document.getElementById('languageMenu');
-            
+
             currentLangSpan.textContent = lang.toUpperCase();
             menu.classList.remove('active');
-            
+
             // Update HTML attributes
             document.documentElement.lang = lang;
             if (lang === 'ar') {
@@ -355,7 +349,7 @@
             } else {
                 document.documentElement.dir = 'ltr';
             }
-            
+
             // Update content
             const translation = translations[lang];
             if (translation) {
@@ -367,7 +361,7 @@
                 });
                 updateOrderButton();
             }
-            
+
             localStorage.setItem('selectedLanguage', lang);
         }
 
@@ -377,12 +371,12 @@
                 thumb.classList.remove('active');
             });
             thumbnail.classList.add('active');
-            
+
             const mainImage = document.getElementById('mainImage');
             const imageData = productImages[index];
             mainImage.src = thumbnail.getAttribute('data-src');
             mainImage.alt = imageData.alt;
-            
+
             currentImageIndex = index;
             document.querySelector('.main-image-container').setAttribute('onclick', `openZoom(${index})`);
         }
@@ -416,14 +410,14 @@
         function updateOrderButton() {
             const orderBtn = document.getElementById('orderBtn');
             const currentLang = document.documentElement.lang || 'en';
-            
+
             let buttonText = `Order Now - ${selectedBundle.price} MAD`;
             if (currentLang === 'fr') {
                 buttonText = `Commander Maintenant - ${selectedBundle.price} MAD`;
             } else if (currentLang === 'ar') {
                 buttonText = `اطلب الآن - ${selectedBundle.price} درهم`;
             }
-            
+
             orderBtn.querySelector('span').textContent = buttonText;
         }
 
@@ -433,18 +427,18 @@
             const modal = document.getElementById('zoomModal');
             const zoomImage = document.getElementById('zoomImage');
             const counter = document.getElementById('zoomCounter');
-            
+
             const imageData = productImages[currentImageIndex];
             zoomImage.src = imageData.src;
             zoomImage.alt = imageData.alt;
             counter.textContent = `${currentImageIndex + 1} / ${productImages.length}`;
-            
+
             // Reset zoom
             zoomLevel = 1;
             translateX = 0;
             translateY = 0;
             updateZoomTransform();
-            
+
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -453,7 +447,7 @@
             if (event && event.target.classList.contains('zoom-image')) {
                 return;
             }
-            
+
             const modal = document.getElementById('zoomModal');
             modal.classList.remove('active');
             document.body.style.overflow = '';
@@ -487,11 +481,11 @@
             const zoomImage = document.getElementById('zoomImage');
             const counter = document.getElementById('zoomCounter');
             const imageData = productImages[currentImageIndex];
-            
+
             zoomImage.src = imageData.src;
             zoomImage.alt = imageData.alt;
             counter.textContent = `${currentImageIndex + 1} / ${productImages.length}`;
-            
+
             // Reset zoom
             zoomLevel = 1;
             translateX = 0;
@@ -502,7 +496,7 @@
         function updateZoomTransform() {
             const zoomImage = document.getElementById('zoomImage');
             zoomImage.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
-            
+
             if (zoomLevel > 1) {
                 zoomImage.classList.add('zoomed');
             } else {
@@ -534,7 +528,7 @@
         }
 
         // Event listeners
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Load saved language
             const savedLang = localStorage.getItem('selectedLanguage');
             if (savedLang && translations[savedLang]) {
@@ -542,7 +536,7 @@
             }
 
             // Close language menu when clicking outside
-            document.addEventListener('click', function(e) {
+            document.addEventListener('click', function (e) {
                 const languageDropdown = document.querySelector('.language-dropdown');
                 if (!languageDropdown.contains(e.target)) {
                     document.getElementById('languageMenu').classList.remove('active');
@@ -554,7 +548,7 @@
             const zoomImage = document.getElementById('zoomImage');
 
             // Mouse wheel zoom
-            zoomModal.addEventListener('wheel', function(e) {
+            zoomModal.addEventListener('wheel', function (e) {
                 e.preventDefault();
                 const delta = e.deltaY > 0 ? -0.2 : 0.2;
                 zoomLevel = Math.max(0.5, Math.min(3, zoomLevel + delta));
@@ -562,7 +556,7 @@
             });
 
             // Drag functionality
-            zoomImage.addEventListener('mousedown', function(e) {
+            zoomImage.addEventListener('mousedown', function (e) {
                 if (zoomLevel > 1) {
                     isDragging = true;
                     startX = e.clientX - translateX;
@@ -571,7 +565,7 @@
                 }
             });
 
-            document.addEventListener('mousemove', function(e) {
+            document.addEventListener('mousemove', function (e) {
                 if (isDragging && zoomLevel > 1) {
                     translateX = e.clientX - startX;
                     translateY = e.clientY - startY;
@@ -579,7 +573,7 @@
                 }
             });
 
-            document.addEventListener('mouseup', function() {
+            document.addEventListener('mouseup', function () {
                 isDragging = false;
             });
 
@@ -587,7 +581,7 @@
             let touchStartX = 0;
             let touchStartY = 0;
 
-            zoomImage.addEventListener('touchstart', function(e) {
+            zoomImage.addEventListener('touchstart', function (e) {
                 if (zoomLevel > 1) {
                     isDragging = true;
                     const touch = e.touches[0];
@@ -597,7 +591,7 @@
                 }
             });
 
-            zoomImage.addEventListener('touchmove', function(e) {
+            zoomImage.addEventListener('touchmove', function (e) {
                 if (isDragging && zoomLevel > 1) {
                     const touch = e.touches[0];
                     translateX = touch.clientX - touchStartX;
@@ -607,15 +601,15 @@
                 }
             });
 
-            zoomImage.addEventListener('touchend', function() {
+            zoomImage.addEventListener('touchend', function () {
                 isDragging = false;
             });
 
             // Keyboard navigation
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function (e) {
                 const modal = document.getElementById('zoomModal');
                 if (modal.classList.contains('active')) {
-                    switch(e.key) {
+                    switch (e.key) {
                         case 'Escape':
                             closeZoom();
                             break;
@@ -638,4 +632,5 @@
         });
     </script>
 </body>
+
 </html>
